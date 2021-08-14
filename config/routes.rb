@@ -39,7 +39,7 @@ Rails.application.routes.draw do
     resources :customers, only:[:show,:edit,:update,:destroy]
     get '/pubulic/customers/quit_confirmation' => 'quit_confirmation'
     patch '/pubilic/customers/quit' => 'quit'
-    resources :items, only:[:index,:show]
+    resources :addresses, only:[:index,:edit,]
   end
   
 end
