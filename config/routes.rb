@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+    root 'homes#top'
+    get 'about' => 'homes#about'
+  
   
   namespace :admin do
     get 'customers/index'
