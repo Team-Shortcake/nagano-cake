@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     :sessions => 'customers/sessions',
     :passwords => 'customers/passwords'
   }
+    root 'homes#top'
+    get 'about' => 'homes#about'
   
   namespace :admin do
     resources :items, only:[:index,:show,:edit,:create,:updete] 
@@ -29,8 +31,7 @@ Rails.application.routes.draw do
 
 
   scope module: :public do
-    root 'homes#top'
-    get 'about' => 'homes#about'
+
     resources :items, only:[:index,:show]
     resources :cart_items, only:[:index,:edit,:update,:destroy]
     delete '/public/cart_items' => 'destroy_all'
