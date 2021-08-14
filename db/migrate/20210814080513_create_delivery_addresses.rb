@@ -4,7 +4,7 @@ class CreateDeliveryAddresses < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.string :address
       t.string :postal_code
-      t.stringDelivery-Addresses :name
+      t.string  :Delivery_Addresses
       t.integer :user_id
       t.string :address
       t.string :postal_code
