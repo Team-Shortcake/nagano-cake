@@ -7,4 +7,9 @@ class Order < ApplicationRecord
       preparing: 3,
       shipped: 4
   }
+  
+  enum payment: {
+      credit: 0,
+      bank: 1
+  }
 end
