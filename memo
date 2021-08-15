@@ -105,7 +105,7 @@ rails g devise:views admins
                           new_order GET    /orders/new(.:format)                                                                    public/orders#new
                               order GET    /orders/:id(.:format)                                                                    public/orders#show
                                item GET    /items/:id(.:format)                                                                     public/items#show
-                               
+
 $ rails generate migration AddNameToUsers name:string
 $ rails g migration AddカラムToCustomers　カラム:stringr
 
