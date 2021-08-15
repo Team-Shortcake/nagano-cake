@@ -2018,3 +2018,26 @@ Processing by Admin::CustomersController#index as HTML
 Completed 200 OK in 111ms (Views: 107.8ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/items" for 61.46.164.51 at 2021-08-15 06:54:37 +0000
+Cannot render console from 61.46.164.51! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/home/ec2-user/environment/nagano-cake/app/controllers/public/items_controller.rb:9: syntax error, unexpected '=', expecting '.' or ::
+    @item = Item.find(params[:id])
+          ^
+/home/ec2-user/environment/nagano-cake/app/controllers/public/items_controller.rb:13: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/public/items_controller.rb:9: syntax error, unexpected '=', expecting '.' or ::
+app/controllers/public/items_controller.rb:13: syntax error, unexpected end, expecting end-of-input
+Started GET "/items" for 61.46.164.51 at 2021-08-15 06:54:59 +0000
+Cannot render console from 61.46.164.51! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ItemsController#index as HTML
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  ↳ app/controllers/public/items_controller.rb:4
+  Rendering public/items/index.html.erb within layouts/application
+  Rendered public/items/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+Completed 200 OK in 546ms (Views: 514.4ms | ActiveRecord: 6.2ms)
+
+
