@@ -128,3 +128,12 @@ Public::
 # git rebase --onto {本来親にしたかったブランチ} {間違って親にしてしまったブランチ名} {親を変更する作業ブランチ名}
 $ git rebase --onto origin/master work/A work/B
 git rebase --onto master <派生元branch名> <現在のbranch名>
+
+
+# 正しくブランチを作り直す
+$ git checkout -b work/B-new origin/develop
+
+# `work/B`分の作業だけを適用する
+# git cherry-pick {コミットID}
+$ git cherry-pick abcdef
+（おあaa
