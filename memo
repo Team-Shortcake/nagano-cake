@@ -134,6 +134,6 @@ git rebase --onto master <派生元branch名> <現在のbranch名>
 $ git checkout -b work/B-new origin/develop
 
 # `work/B`分の作業だけを適用する
-# git cherry-pick {コミットID}
+# git cherry-pick {コミットID}a
 $ git cherry-pick abcdef
-（おあaaa
+（おあaaaa
