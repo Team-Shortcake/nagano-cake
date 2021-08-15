@@ -1,0 +1,64 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";
+ 
+ * {
+  margin: 0;
+  padding: 0;
+}
+
+.background_top {
+  width:790px;
+  height:250px;
+  margin-top: 20px;
+  background-image: url(shop.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 50px 200px;
+}
+
+.top-img{
+  height: 770px;
+	width :100%;
+  object-fit: cover;
+}
+
+.space-left {
+  margin-left: 80px;
+}
+
+.genre_said {
+  position: relative;
+  color: #158b2b;
+  font-size: 15px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 1.5em 0;
+}
+.genre_said:before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 150px;
+  height: 58px;
+  border-radius: 50%;
+  border: 5px solid #a6ddb0;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
