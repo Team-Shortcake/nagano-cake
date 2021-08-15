@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get 'customers/edit'
   end
   get 'customers/show'
-  get 'customers/edit'
+
   devise_for :admins, :controllers => {
     :registrations => 'admins/registrations',
     :sessions => 'admins/sessions',
