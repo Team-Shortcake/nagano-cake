@@ -135,5 +135,5 @@ $ git checkout -b work/B-new origin/develop
 
 # `work/B`分の作業だけを適用する
 # git cherry-pick {コミットID}a
-$ git cherry-pick abcdef
+$ git cherry-pick abcdefaaa
 （おあaaaa
