@@ -124,3 +124,6 @@ rails g migration AddFirst_Name_KanjiToCustomers first_name_kanji:string
 
 <%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', class: 'new_customer', local: true do |f| %>
 Public::
+
+# git rebase --onto {本来親にしたかったブランチ} {間違って親にしてしまったブランチ名} {親を変更する作業ブランチ名}
+$ git rebase --onto origin/master work/A work/B
