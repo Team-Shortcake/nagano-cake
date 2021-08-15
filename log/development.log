@@ -2090,3 +2090,25 @@ Processing by Admin::OrdersController#index as HTML
 Completed 200 OK in 828ms (Views: 792.4ms | ActiveRecord: 5.7ms)
 
 
+Started GET "/orders/thanks" for 61.46.164.51 at 2021-08-15 09:30:36 +0000
+Cannot render console from 61.46.164.51! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"thanks"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_header.html.erb (5.6ms)
+Completed 200 OK in 617ms (Views: 597.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders/thanks" for 61.46.164.51 at 2021-08-15 09:31:23 +0000
+Cannot render console from 61.46.164.51! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::OrdersController#show as HTML
+  Parameters: {"id"=>"thanks"}
+  Rendering public/orders/show.html.erb within layouts/application
+  Rendered public/orders/show.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 91ms (Views: 89.7ms | ActiveRecord: 0.0ms)
+
+
