@@ -679,3 +679,1061 @@ Processing by Customers::RegistrationsController#new as HTML
 Completed 200 OK in 264ms (Views: 227.0ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 15:37:41 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (16.1ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (32.1ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 621ms (Views: 606.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 15:43:21 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.7ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_header.html.erb (4.4ms)
+Completed 200 OK in 114ms (Views: 111.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 15:43:45 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.5ms)
+  Rendered customers/shared/_links.html.erb (0.7ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 94ms (Views: 93.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 15:46:03 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.8ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 90ms (Views: 89.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 15:47:46 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (12.7ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (18.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/customers/sign_in":String):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <h2>既に登録済みの方</h2>
+    3:   <%= link_to "こちら", new_session_path(resource_name) do %>
+    4:   <p><%= "　からログインしてください。" %></p>
+    5:   <% end %><br />
+    6: <% end %>
+  
+app/views/customers/shared/_links.html.erb:3:in `_app_views_customers_shared__links_html_erb__1386496323529457149_69882070997220'
+app/views/customers/registrations/new.html.erb:29:in `_app_views_customers_registrations_new_html_erb__1765851009853699287_69882070863160'
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 15:48:30 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (4.3ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/customers/sign_in":String):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <h2>既に登録済みの方</h2>
+    3:   <%= link_to "こちら", new_session_path(resource_name) do %>
+    4:     <%= "　からログインしてください。" %>
+    5:   <% end %><br />
+    6: <% end %>
+  
+app/views/customers/shared/_links.html.erb:3:in `_app_views_customers_shared__links_html_erb__1386496323529457149_69882206511700'
+app/views/customers/registrations/new.html.erb:29:in `_app_views_customers_registrations_new_html_erb__1765851009853699287_69882206434900'
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 15:48:33 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (3.8ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stringify_keys' for "/customers/sign_in":String):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <h2>既に登録済みの方</h2>
+    3:   <%= link_to "こちら", new_session_path(resource_name) do %>
+    4:     <%= "　からログインしてください。" %>
+    5:   <% end %><br />
+    6: <% end %>
+  
+app/views/customers/shared/_links.html.erb:3:in `_app_views_customers_shared__links_html_erb__1386496323529457149_69882206189300'
+app/views/customers/registrations/new.html.erb:29:in `_app_views_customers_registrations_new_html_erb__1765851009853699287_69882206088400'
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 15:49:39 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.5ms)
+  Rendered customers/shared/_links.html.erb (0.8ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 109ms (Views: 107.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 15:50:10 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.7ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 96ms (Views: 95.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 60.56.201.135 at 2021-08-14 15:50:23 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::SessionsController#new as HTML
+  Rendering customers/sessions/new.html.erb within layouts/application
+  Rendered customers/shared/_links.html.erb (1.0ms)
+  Rendered customers/sessions/new.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 105ms (Views: 102.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 15:51:20 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.7ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 89ms (Views: 87.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 15:55:30 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.7ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 98ms (Views: 97.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 15:55:32 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.8ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 87ms (Views: 86.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 16:01:41 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.8ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_header.html.erb (4.0ms)
+Completed 200 OK in 101ms (Views: 99.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 60.56.201.135 at 2021-08-14 16:01:48 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::SessionsController#new as HTML
+  Rendering customers/sessions/new.html.erb within layouts/application
+  Rendered customers/shared/_links.html.erb (0.8ms)
+  Rendered customers/sessions/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 98ms (Views: 96.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddAddressToCustomers (20210814170237)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "address" varchar[0m
+  ↳ db/migrate/20210814170237_add_address_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210814170237"]]
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddFirstNameKanjiToCustomers (20210814170437)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "first_name_kanji" varchar[0m
+  ↳ db/migrate/20210814170437_add_first_name_kanji_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210814170437"]]
+  ↳ bin/rails:9
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddLastNameKanjiToCustomers (20210814170553)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "last_name_kanji" varchar[0m
+  ↳ db/migrate/20210814170553_add_last_name_kanji_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210814170553"]]
+  ↳ bin/rails:9
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddFirstNameKanaToCustomers (20210814170652)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "first_name_kana" varchar[0m
+  ↳ db/migrate/20210814170652_add_first_name_kana_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210814170652"]]
+  ↳ bin/rails:9
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddLastNameKanaToCustomers (20210814170742)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "last_name_kana" varchar[0m
+  ↳ db/migrate/20210814170742_add_last_name_kana_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210814170742"]]
+  ↳ bin/rails:9
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddPostalCodeToCustomers (20210814171009)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "postal_code" varchar[0m
+  ↳ db/migrate/20210814171009_add_postal_code_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210814171009"]]
+  ↳ bin/rails:9
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddTelephoneNumberToCustomers (20210814171123)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "customers" ADD "telephone_number" varchar[0m
+  ↳ db/migrate/20210814171123_add_telephone_number_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210814171123"]]
+  ↳ bin/rails:9
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddIsUserStatusToCustomers (20210814171516)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "customers" ADD "is_user_status" boolean DEFAULT 0 NOT NULL[0m
+  ↳ db/migrate/20210814171516_add_is_user_status_to_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210814171516"]]
+  ↳ bin/rails:9
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 17:27:47 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.5ms)
+  Rendered customers/shared/_links.html.erb (0.9ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (11.6ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 156ms (Views: 122.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 17:50:07 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.8ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+Completed 200 OK in 115ms (Views: 101.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:06:30 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/application_controller.rb:7:in `configure_permitted_parameters'
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:07:33 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/application_controller.rb:7:in `configure_permitted_parameters'
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:11:25 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.8ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 156ms (Views: 121.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:12:36 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (18.7ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `last_name' for #<Customer:0x00007f1d6015e670>
+Did you mean?  last_name_kana):
+    18:   </div>
+    19:     <div class="field">
+    20:     <%= f.label :last_name_kana %><br />
+    21:     <%= f.text_field :last_name, autofocus: true %>
+    22:   </div>
+    23:   <!--名前ここまで-->
+    24: 
+  
+app/views/customers/registrations/new.html.erb:21:in `block in _app_views_customers_registrations_new_html_erb__1765851009853699287_69882071409360'
+app/views/customers/registrations/new.html.erb:3:in `_app_views_customers_registrations_new_html_erb__1765851009853699287_69882071409360'
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:12:49 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (1.0ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 169ms (Views: 167.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:13:25 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.7ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 105ms (Views: 103.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:15:03 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.7ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 111ms (Views: 109.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:18:40 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.5ms)
+  Rendered customers/shared/_links.html.erb (37.3ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (88.2ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 860ms (Views: 689.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:20:22 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.5ms)
+  Rendered customers/shared/_links.html.erb (0.8ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+Completed 200 OK in 149ms (Views: 147.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:21:56 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/registrations/new.html.erb within layouts/application (14.7ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:33: syntax error, unexpected '(', expecting ')'
+...append=( f.label :郵便番号(ハイフンナシ) );@output...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:43: syntax error, unexpected '(', expecting ')'
+...append=( f.label :電話番号(ハイフンナシ) );@output...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:48: syntax error, unexpected '(', expecting ')'
+...end=( f.label :パスワード(6文字以上) );@output_buff...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:68: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/customers/registrations/new.html.erb:33: syntax error, unexpected '(', expecting ')'
+app/views/customers/registrations/new.html.erb:43: syntax error, unexpected '(', expecting ')'
+app/views/customers/registrations/new.html.erb:48: syntax error, unexpected '(', expecting ')'
+app/views/customers/registrations/new.html.erb:68: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:22:43 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/registrations/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting ')'
+...append=( f.label :郵便番号"(ハイフンナシ")" );@out...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting end
+...便番号"(ハイフンナシ")" );@output_buffer.safe_append...
+...                               ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:37: syntax error, unexpected tIDENTIFIER, expecting end
+    <div class="field">
+                ^~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting end
+  <div class="field">
+              ^~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:47: syntax error, unexpected tIDENTIFIER, expecting end
+  <div class="field">
+              ^~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:48: syntax error, unexpected ')', expecting end
+...パスワード(6文字以上")" );@output_buffer.safe_appen...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting end
+...d :password, autocomplete: "new-password" );@output_buffer.s...
+...                            ^~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:52: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+...d, autocomplete: "new-password" );@output_buffer.safe_append...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:55: syntax error, unexpected tIDENTIFIER, expecting end
+  <div class="field">
+              ^~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:57: syntax error, unexpected tIDENTIFIER, expecting end
+...onfirmation, autocomplete: "new-password" );@output_buffer.s...
+...                            ^~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:57: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+...n, autocomplete: "new-password" );@output_buffer.safe_append...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting end
+  <div class="actions">
+              ^~~~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting end
+...append=( f.submit "新規登録" );@output_buffer.safe_appen...
+...                   ^~~~~~~~~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:65: syntax error, unexpected tIDENTIFIER, expecting end
+...ffer.append=( render "customers/shared/links" );
+...                      ^~~~~~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:65: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+...render "customers/shared/links" );
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:70: unterminated string meets end of file
+          end
+              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:70: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/customers/registrations/new.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/customers/registrations/new.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting end
+app/views/customers/registrations/new.html.erb:37: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/customers/registrations/new.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/customers/registrations/new.html.erb:47: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/customers/registrations/new.html.erb:48: syntax error, unexpected ')', expecting end
+app/views/customers/registrations/new.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/customers/registrations/new.html.erb:52: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/customers/registrations/new.html.erb:55: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/customers/registrations/new.html.erb:57: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/customers/registrations/new.html.erb:57: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/customers/registrations/new.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/customers/registrations/new.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/customers/registrations/new.html.erb:65: syntax error, unexpected tIDENTIFIER, expecting end
+app/views/customers/registrations/new.html.erb:65: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/customers/registrations/new.html.erb:70: unterminated string meets end of file
+app/views/customers/registrations/new.html.erb:70: syntax error, unexpected end-of-input, expecting end
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:25:01 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/registrations/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting ')'
+...append=( f.label :郵便番号"("ハイフンナシ")" );@ou...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+...郵便番号"("ハイフンナシ")" );@output_buffer.safe_app...
+...               ^~~~~~~~~~~~~~~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:43: syntax error, unexpected '(', expecting ')'
+...append=( f.label :電話番号(ハイフンナシ) );@output...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:48: syntax error, unexpected '(', expecting ')'
+...end=( f.label :パスワード(6文字以上")" );@output_bu...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:68: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/customers/registrations/new.html.erb:33: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/customers/registrations/new.html.erb:33: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/customers/registrations/new.html.erb:43: syntax error, unexpected '(', expecting ')'
+app/views/customers/registrations/new.html.erb:48: syntax error, unexpected '(', expecting ')'
+app/views/customers/registrations/new.html.erb:68: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:25:51 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/registrations/new.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:33: syntax error, unexpected '(', expecting ')'
+...append=( f.label :郵便番号(ハイフンナシ) );@output...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:43: syntax error, unexpected '(', expecting ')'
+...append=( f.label :電話番号(ハイフンナシ) );@output...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:48: syntax error, unexpected '(', expecting ')'
+...end=( f.label :パスワード(6'文字以上) );@output_buf...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+...buffer.safe_append=' characters minimum)</em>
+...                     ^~~~~~~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:53: syntax error, unexpected '<', expecting ')'
+  </div>
+  ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:58: syntax error, unexpected '<', expecting ')'
+  </div>
+  ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:62: unknown regexp options - dv
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:70: unterminated string meets end of file
+          end
+              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:70: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/customers/registrations/new.html.erb:33: syntax error, unexpected '(', expecting ')'
+app/views/customers/registrations/new.html.erb:43: syntax error, unexpected '(', expecting ')'
+app/views/customers/registrations/new.html.erb:48: syntax error, unexpected '(', expecting ')'
+app/views/customers/registrations/new.html.erb:50: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/customers/registrations/new.html.erb:53: syntax error, unexpected '<', expecting ')'
+app/views/customers/registrations/new.html.erb:58: syntax error, unexpected '<', expecting ')'
+app/views/customers/registrations/new.html.erb:62: unknown regexp options - dv
+app/views/customers/registrations/new.html.erb:70: unterminated string meets end of file
+app/views/customers/registrations/new.html.erb:70: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:26:14 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/registrations/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:33: syntax error, unexpected '(', expecting ')'
+...append=( f.label :郵便番号(ハイフンナシ) );@output...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:43: syntax error, unexpected '(', expecting ')'
+...append=( f.label :電話番号(ハイフンナシ) );@output...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:68: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/customers/registrations/new.html.erb:33: syntax error, unexpected '(', expecting ')'
+app/views/customers/registrations/new.html.erb:43: syntax error, unexpected '(', expecting ')'
+app/views/customers/registrations/new.html.erb:68: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:26:47 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.5ms)
+  Rendered customers/shared/_links.html.erb (1.0ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (44.7ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 397ms (Views: 396.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:27:34 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.8ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_header.html.erb (5.1ms)
+Completed 200 OK in 133ms (Views: 132.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:27:38 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.5ms)
+  Rendered customers/shared/_links.html.erb (0.7ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 100ms (Views: 99.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:28:02 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/registrations/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:47: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="field">
+              ^~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting ')'
+...d :password, autocomplete: "new-password" );@output_buffer.s...
+...                            ^~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:52: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+...d, autocomplete: "new-password" );@output_buffer.safe_append...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:55: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="field">
+              ^~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:57: syntax error, unexpected tIDENTIFIER, expecting ')'
+...onfirmation, autocomplete: "new-password" );@output_buffer.s...
+...                            ^~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:57: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+...n, autocomplete: "new-password" );@output_buffer.safe_append...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="actions">
+              ^~~~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+...append=( f.submit "新規登録" );@output_buffer.safe_appen...
+...                   ^~~~~~~~~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:65: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ffer.append=( render "customers/shared/links" );
+...                      ^~~~~~~~~
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:65: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+...render "customers/shared/links" );
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:70: unterminated string meets end of file
+          end
+              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:70: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/customers/registrations/new.html.erb:47: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/customers/registrations/new.html.erb:52: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/customers/registrations/new.html.erb:52: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/customers/registrations/new.html.erb:55: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/customers/registrations/new.html.erb:57: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/customers/registrations/new.html.erb:57: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/customers/registrations/new.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/customers/registrations/new.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/customers/registrations/new.html.erb:65: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/customers/registrations/new.html.erb:65: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/views/customers/registrations/new.html.erb:70: unterminated string meets end of file
+app/views/customers/registrations/new.html.erb:70: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:28:17 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.5ms)
+  Rendered customers/shared/_links.html.erb (0.9ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_header.html.erb (2.7ms)
+Completed 200 OK in 92ms (Views: 91.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:30:25 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/registrations/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting ')'
+...end=( f.label :パスワード"(6文字以上)" );@output_bu...
+...                              ^):
+  
+app/views/customers/registrations/new.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting ')'
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:30:35 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/registrations/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting ')'
+...end=( f.label :パスワード"('6'文字以上)" );@output_...
+...                              ^):
+  
+app/views/customers/registrations/new.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting ')'
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:31:14 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/registrations/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting ')'
+...end=( f.label :パスワード"('6'+'文字以上')" );@outp...
+...                              ^):
+  
+app/views/customers/registrations/new.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting ')'
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:31:36 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/registrations/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:48: syntax error, unexpected '(', expecting ')'
+...end=( f.label :パスワード('6'+'文字以上') );@output...
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:48: syntax error, unexpected ')', expecting end
+...ワード('6'+'文字以上') );@output_buffer.safe_append='
+...                              ^
+/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:68: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/customers/registrations/new.html.erb:48: syntax error, unexpected '(', expecting ')'
+app/views/customers/registrations/new.html.erb:48: syntax error, unexpected ')', expecting end
+app/views/customers/registrations/new.html.erb:68: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:31:50 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/registrations/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ec2-user/environment/nagano-cake/app/views/customers/registrations/new.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting ')'
+...end=( f.label :パスワード"(文字以上')" );@output_bu...
+...                              ^):
+  
+app/views/customers/registrations/new.html.erb:48: syntax error, unexpected tSTRING_BEG, expecting ')'
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:32:18 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.7ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 102ms (Views: 100.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:33:27 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.4ms)
+  Rendered customers/shared/_links.html.erb (0.8ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 147ms (Views: 146.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:33:58 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.6ms)
+  Rendered customers/shared/_links.html.erb (1.0ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 114ms (Views: 113.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:34:49 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.5ms)
+  Rendered customers/shared/_links.html.erb (0.8ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 126ms (Views: 125.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-14 18:36:32 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.5ms)
+  Rendered customers/shared/_links.html.erb (0.9ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_header.html.erb (21.3ms)
+Completed 200 OK in 126ms (Views: 125.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 60.56.201.135 at 2021-08-14 18:42:35 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery.jpostal' with type 'application/javascript'
+Checked in these paths: 
+  /home/ec2-user/environment/nagano-cake/app/assets/config
+  /home/ec2-user/environment/nagano-cake/app/assets/images
+  /home/ec2-user/environment/nagano-cake/app/assets/javascripts
+  /home/ec2-user/environment/nagano-cake/app/assets/stylesheets
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/bundler/gems/refile-46b4178654e6/app/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actioncable-5.2.6/lib/assets/compiled
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activestorage-5.2.6/app/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionview-5.2.6/lib/assets/compiled
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/ec2-user/environment/nagano-cake/node_modules
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/popper_js-1.16.0/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/bootstrap-4.6.0/assets/stylesheets
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/bootstrap-4.6.0/assets/javascripts):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/javascripts/application.js:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2092108845460579312_52149140'
+Started GET "/" for 60.56.201.135 at 2021-08-14 18:43:04 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery.jpostal' with type 'application/javascript'
+Checked in these paths: 
+  /home/ec2-user/environment/nagano-cake/app/assets/config
+  /home/ec2-user/environment/nagano-cake/app/assets/images
+  /home/ec2-user/environment/nagano-cake/app/assets/javascripts
+  /home/ec2-user/environment/nagano-cake/app/assets/stylesheets
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/bundler/gems/refile-46b4178654e6/app/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actioncable-5.2.6/lib/assets/compiled
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activestorage-5.2.6/app/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionview-5.2.6/lib/assets/compiled
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/ec2-user/environment/nagano-cake/node_modules
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/popper_js-1.16.0/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/bootstrap-4.6.0/assets/stylesheets
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/bootstrap-4.6.0/assets/javascripts):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/javascripts/application.js:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2092108845460579312_70245612108500'
+Started GET "/" for 60.56.201.135 at 2021-08-14 18:43:05 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery.jpostal' with type 'application/javascript'
+Checked in these paths: 
+  /home/ec2-user/environment/nagano-cake/app/assets/config
+  /home/ec2-user/environment/nagano-cake/app/assets/images
+  /home/ec2-user/environment/nagano-cake/app/assets/javascripts
+  /home/ec2-user/environment/nagano-cake/app/assets/stylesheets
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/bundler/gems/refile-46b4178654e6/app/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actioncable-5.2.6/lib/assets/compiled
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activestorage-5.2.6/app/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionview-5.2.6/lib/assets/compiled
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/ec2-user/environment/nagano-cake/node_modules
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/popper_js-1.16.0/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/bootstrap-4.6.0/assets/stylesheets
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/bootstrap-4.6.0/assets/javascripts):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/javascripts/application.js:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2092108845460579312_70245610427420'
+Started GET "/" for 60.56.201.135 at 2021-08-14 18:43:07 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery.jpostal' with type 'application/javascript'
+Checked in these paths: 
+  /home/ec2-user/environment/nagano-cake/app/assets/config
+  /home/ec2-user/environment/nagano-cake/app/assets/images
+  /home/ec2-user/environment/nagano-cake/app/assets/javascripts
+  /home/ec2-user/environment/nagano-cake/app/assets/stylesheets
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/bundler/gems/refile-46b4178654e6/app/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actioncable-5.2.6/lib/assets/compiled
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activestorage-5.2.6/app/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/actionview-5.2.6/lib/assets/compiled
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /home/ec2-user/environment/nagano-cake/node_modules
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/popper_js-1.16.0/assets/javascripts
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/bootstrap-4.6.0/assets/stylesheets
+  /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/bootstrap-4.6.0/assets/javascripts):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/assets/javascripts/application.js:23
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__2092108845460579312_70245610456880'
+Started GET "/" for 60.56.201.135 at 2021-08-15 02:03:57 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (11.8ms)
+Completed 200 OK in 931ms (Views: 924.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_up" for 60.56.201.135 at 2021-08-15 02:04:01 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::RegistrationsController#new as HTML
+  Rendering customers/registrations/new.html.erb within layouts/application
+  Rendered customers/shared/_error_messages.html.erb (0.8ms)
+  Rendered customers/shared/_links.html.erb (1.1ms)
+  Rendered customers/registrations/new.html.erb within layouts/application (80.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 248ms (Views: 210.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/customers/sign_in" for 60.56.201.135 at 2021-08-15 02:04:04 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::SessionsController#new as HTML
+  Rendering customers/sessions/new.html.erb within layouts/application
+  Rendered customers/shared/_links.html.erb (1.1ms)
+  Rendered customers/sessions/new.html.erb within layouts/application (15.8ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 131ms (Views: 129.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 60.56.201.135 at 2021-08-15 02:04:06 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Public::ItemsController#index as HTML
+  Rendering public/items/index.html.erb within layouts/application
+  Rendered public/items/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 109ms (Views: 106.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for 60.56.201.135 at 2021-08-15 02:04:08 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 82ms (Views: 81.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/sign_in" for 60.56.201.135 at 2021-08-15 02:04:10 +0000
+Cannot render console from 60.56.201.135! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Customers::SessionsController#new as HTML
+  Rendering customers/sessions/new.html.erb within layouts/application
+  Rendered customers/shared/_links.html.erb (0.8ms)
+  Rendered customers/sessions/new.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+Completed 200 OK in 169ms (Views: 165.0ms | ActiveRecord: 0.0ms)
+
+
