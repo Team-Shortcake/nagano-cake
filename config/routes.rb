@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   namespace :admin do
     get 'customers/index'
     get 'customers/show'
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     :sessions => 'admin/sessions',
     :passwords => 'admin/passwords'
   }
-  
+
   devise_for :customers, :controllers => {
     :registrations => 'customers/registrations',
     :sessions => 'customers/sessions',
@@ -20,9 +20,9 @@ Rails.application.routes.draw do
   }
     root 'homes#top'
     get 'about' => 'homes#about'
-  
+
   namespace :admin do
-    resources :items, only:[:index,:show,:edit,:create,:updete] 
+    resources :items, only:[:index,:show,:edit,:create,:updete]
     resources :genres, only:[:index,:create,:edit,:update]
     resources :customers, only:[:index,:show,:edit,:create,:update]
     resources :orders, only:[:index,:show,:edit,:update]
@@ -41,5 +41,5 @@ Rails.application.routes.draw do
     patch '/pubilic/customers/quit' => 'quit'
     resources :addresses, only:[:index,:edit,]
   end
-  
+
 end
