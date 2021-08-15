@@ -109,7 +109,11 @@ rails g devise:views admins
 $ rails generate migration AddNameToUsers name:string
 $ rails g migration AddカラムToCustomers　カラム:stringr
 
+<<<<<<< HEAD
 
 rails g migration AddFirst_Name_KanjiToCustomers first_name_kanji:string
 aaa
 
+=======
+rails g migration AddFirst_Name_KanjiToCustomers first_name_kanji:stringa
+>>>>>>> 48174ba6aca1fea57e248d522b0447c83e585b46
