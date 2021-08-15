@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     get 'customers/edit'
   end
   get 'customers/show'
-  get 'customers/edit'
   devise_for :admins, :controllers => {
     :registrations => 'admin/registrations',
     :sessions => 'admin/sessions',
@@ -37,8 +36,8 @@ Rails.application.routes.draw do
     delete '/public/cart_items' => 'destroy_all'
     resources :orders, only:[:index,:show,:new,:create]
     resources :customers, only:[:show,:edit,:update,:destroy]
-    get '/pubulic/customers/quit_confirmation' => 'quit_confirmation'
-    patch '/pubilic/customers/quit' => 'quit'
+    get '/public/customers/quit_confirmation' => 'quit_confirmation'
+    patch '/public/customers/quit' => 'quit'
     resources :items, only:[:index,:show]
   end
   
