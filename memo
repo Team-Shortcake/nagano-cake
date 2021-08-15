@@ -127,3 +127,4 @@ Public::
 
 # git rebase --onto {本来親にしたかったブランチ} {間違って親にしてしまったブランチ名} {親を変更する作業ブランチ名}
 $ git rebase --onto origin/master work/A work/B
+git rebase --onto master <派生元branch名> <現在のbranch名>
