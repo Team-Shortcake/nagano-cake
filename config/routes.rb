@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get 'customers/show'
   get 'customers/edit'
   devise_for :admins, :controllers => {
-    :registrations => 'admin/registrations',
-    :sessions => 'admin/sessions',
-    :passwords => 'admin/passwords'
+    :registrations => 'admins/registrations',
+    :sessions => 'admins/sessions',
+    :passwords => 'admins/passwords'
   }
   
   devise_for :customers, :controllers => {
