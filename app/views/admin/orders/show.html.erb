@@ -1,0 +1,60 @@
+<div class="container">
+      <h3>注文履歴詳細</h3>
+      <div class="row">
+         <p class="col-md-2">購入者</p>
+         <p class="col-md-10">
+            <%= link_to admin_customer_path(@order.customer_id) do %>
+               <%= @order.customer.last_name %> <%= @order.customer.first_name %>
+            <% end %>
+         </p>
+      </div>
+         
+      <div class="row">
+         <p class="col-md-2">注文日</p>
+         <p class="col-md-10"><%= @order.created_at.to_s(:date_jp) %></p>
+      </div>
+        
+      <div class="row">
+         <p class="col-md-2">配送先</p>
+         <p class="col-md-10">〒<%= @order.postal_code.to_s %> <%= @order.address %></p>
+      </div>
+        
+      <div class="row">
+         <p class="col-md-2"></p>
+         <p class="col-md-10"><%= @order.name %></p>
+      </div>
+      
+      <div class="row">
+         <p class="col-md-2">支払い方法</p>
+         <p class="col-md-10"><%= @order.payment_i18n %></p>
+      </div>
+
+      <div class="row">
+         <p class="col-md-2">注文ステータス</p>
+         <div class="col-md-10">
+            <%= form_with model: @order, url:admin_order_path(@order.id), method: :patch, local: true do | f | %> 
+               <%= f.select :order_status, options_for_select_from_enum(Order, :order_status) %> <%= f.select :order_status, Order.order_statuses_i18n.invert, class:"form-control form-control-sm col-6" %>
+               <%= f.submit '更新',class: 'btn btn-success ml-4' %>
+            <% end %>
+         </div>
+      </div>
+      <div class="row mt-5">
+         <div class="col-md-8">
+            <table class="table table-hover">
+               <thead>
+                  <tr>
+                     <th>商品名</th>
+                     <th>単価(税込)</th>
+                     <th>数量</th>
+                     <th>小計</th>
+                     <th>制作ステータス</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  
+               </tbody>
+            </table>
+         </div>
+         
+      </div>
+</div>
