@@ -10,7 +10,15 @@ class ApplicationController < ActionController::Base
       end
      end
 
-  protected
+  private
+
+  def after_sign_in_path_for(resource)
+    customer_path(resource)
+  end
+
+  def after_sign_out_path_for(resource)
+    root_path
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name_kanji, :last_name_kanji, :first_name_kana, :last_name_kana, :postal_code, :telephone_number])
