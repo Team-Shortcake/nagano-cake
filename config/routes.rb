@@ -38,7 +38,7 @@ Rails.application.routes.draw do
     get '/orders/confirm' => 'orders#confirm'
     post '/orders/confirm' => 'orders#confirm'
     get '/orders/thanks' => 'orders#thanks'
-    get '/orders' => 'orders#index' 
+    get '/orders' => 'orders#index'
     resources :customers, only:[:show,:edit,:update,:destroy]
     get '/customers/quit_confirmation' => 'customers#quit_confirmation'
     patch '/customers/quit' => 'customers#quit'
