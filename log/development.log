@@ -2321,3 +2321,35 @@ Processing by HomesController#top as HTML
 Completed 200 OK in 63ms (Views: 62.2ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/" for 126.89.127.106 at 2021-08-16 10:10:06 +0000
+Cannot render console from 126.89.127.106! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/ec2-user/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT ? OFFSET ?[0m  [["LIMIT", 8], ["OFFSET", 4]]
+  ↳ app/views/homes/top.html.erb:22
+  Rendered homes/top.html.erb within layouts/application (37.7ms)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:9
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."valid_invalid_status" = ? LIMIT ?[0m  [["valid_invalid_status", 0], ["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."valid_invalid_status" = ? LIMIT ?[0m  [["valid_invalid_status", 0], ["LIMIT", 11]]
+  ↳ /home/ec2-user/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:4
+  Rendered layouts/_header.html.erb (235.5ms)
+Completed 500 Internal Server Error in 1023ms (ActiveRecord: 11.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `orders_path' for #<#<Class:0x0000000004059d90>:0x0000000004062080>
+Did you mean?  orders_confirm_path):
+     9:         <% elsif admin_signed_in? %>
+    10:           <li><%= link_to '商品一覧', items_path %></li>
+    11:           <li><%= link_to '会員一覧', admin_customers_index_path %></li>
+    12:           <li><%= link_to '注文履歴一覧', orders_path %></li>
+    13:           <li><%= link_to 'ジャンル一覧', admin_genres_path %></li>
+    14:           <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
+    15:         <% else %>
+  
+app/views/layouts/_header.html.erb:12:in `_app_views_layouts__header_html_erb__3524258588146681447_69987819544020'
+app/views/layouts/application.html.erb:13:in `_app_views_layouts_application_html_erb___4052577626396757885_38783480'

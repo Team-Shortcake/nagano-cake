@@ -51,7 +51,20 @@
                   </tr>
                </thead>
                <tbody>
-                  
+                  <% @order.order_details.each do |order_detail| %>
+                   <tr>
+                      <td><%= order_detail.item.name %></td>
+                      <td><%= order_detail.item_with_tax.to_s %></td>
+                      <td><%= order_item.quantity %></td>
+                      <td><%= order_item.subtotal.to_s %></td>
+                      <td>
+                         <%= form_with model: order_detail, url: admin_order_detail(order_detail.id), method: :patch,  local: true do | f | %>
+                         <%= f.select :production_status, options_for_select_from_enum(OrderDetail, :production_status) %>
+                         <%= f.submit '更新',class: 'btn btn-success' %>
+                         <% end %>
+                      </td>
+                   </tr>
+                  <% end %>
                </tbody>
             </table>
          </div>
