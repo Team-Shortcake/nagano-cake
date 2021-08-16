@@ -1,6 +1,6 @@
 class Public::OrdersController < ApplicationController
   def index
-    aaaa
+    @order = Order.all
   end
 
   def show

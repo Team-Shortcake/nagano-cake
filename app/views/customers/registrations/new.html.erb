@@ -1,7 +1,6 @@
-<script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
 <h2>新規登録</h2>
+<%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', class: 'new_customer', local: true do |f| %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "customers/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -35,8 +34,8 @@
     <%= f.text_field :postal_code %>
   </div>
 
-    <div class="field">
-    <%= f.label :住所 %><br>
+  <div class="field">
+    <%= f.label :"住所" %><br>
     <%= f.text_field :address %>
   </div>
 
@@ -46,7 +45,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :パスワード %>
+    <%= f.label :"パスワード" %>
     <% if @minimum_password_length %>
     (<%= @minimum_password_length %>文字以上)
     <% end %><br />
