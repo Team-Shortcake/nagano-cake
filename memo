@@ -113,3 +113,4 @@ $ rails g migration AddカラムToCustomers　カラム:stringr
 rails g migration AddFirst_Name_KanjiToCustomers first_name_kanji:string
 aaa
 
+<%= link_to %>
