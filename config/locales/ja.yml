@@ -7,3 +7,10 @@ ja:
         in_production: "製作中"
         preparing: "発送準備中"
         shipped: "発送済み"
+
+ja:
+  enums:
+    order_detail:
+      production_status:
+        credit: "クレジットカード"
+        bank: "銀行振込"
