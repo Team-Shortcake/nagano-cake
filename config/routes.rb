@@ -34,12 +34,14 @@ Rails.application.routes.draw do
 
     resources :items, only:[:index,:show]
     resources :cart_items, only:[:index,:edit,:update,:destroy]
-    delete '/public/cart_items' => 'cart_items#destroy_all'
-    resources :orders, only:[:index,:show,:new,:create]
+    delete '/cart_items' => 'cart_items#destroy_all'
+    post '/orders/session' => 'orders#session_create'
+    get '/orders/confirm' => 'orders#confirm'
+    post '/orders/confirm' => 'orders#confirm'
     get '/orders/thanks' => 'orders#thanks'
     resources :customers, only:[:show,:edit,:update,:destroy]
-    get '/pubulic/customers/quit_confirmation' => 'customers#quit_confirmation'
-    patch '/pubilic/customers/quit' => 'customers#quit'
+    get '/customers/quit_confirmation' => 'customers#quit_confirmation'
+    patch '/customers/quit' => 'customers#quit'
     resources :addresses, only:[:index,:edit,]
   end
   
