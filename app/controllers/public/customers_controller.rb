@@ -6,21 +6,18 @@ class Public::CustomersController < ApplicationController
 
   def edit
   end
-  
+
   def update
     @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
-      redirect_to customer_path(@customer)
+      redirect_to customer_path
     else
       render "edit"
     end
+  end
+  private
+# リクアイアできない
+	def customer_params
+  	params.require(:customer).permit(:last_name_kanji, :first_name_kanji, :last_name_kana, :first_name_kana, :email, :postal_code, :address, :telephone_number)
   end
 end
-  def update
-    if @user.update(user_params)
-      redirect_to user_path(@user), notice: "You have updated user successfully."
-    else
-      render "edit"
-    end
-  end
-
