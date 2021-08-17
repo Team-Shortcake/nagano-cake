@@ -1,9 +1,9 @@
 <div class="container">
-    <% if flash[:notice] %>
-     <div class="alert alert-success" role="alert">
-       <p class="notice text-center" style="color:green;"><%= flash[:notice] %></p>
-     </div>
-      <% end %>
+    <!--<% if flash[:notice] %>-->
+    <!-- <div class="alert alert-success" role="alert">-->
+    <!--   <p class="notice text-center" style="color:green;"><%= flash[:notice] %></p>-->
+    <!-- </div>-->
+    <!--  <% end %>-->
       <h3 class="mt-5 mb-3">
        <span class="bg-light">　注文履歴一覧　</span>
       </h3>
@@ -26,7 +26,7 @@
                   <% end %>
                 </td>
                 <td><%= order.name %></td>
-                <td><%= order.order_items.sum(:quantity) %></td>
+                <td><%= order.order_detail.sum(:quantity) %></td>
                 <td><%= order.order_status_i18n %></td>
               </tr>
             <% end %>

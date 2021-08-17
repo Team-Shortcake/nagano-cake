@@ -1,10 +1,11 @@
 class OrderDetail < ApplicationRecord
    belongs_to :item
    belongs_to :order
-   
-   enum making_status: [:着手不可,:制作待ち,:製作中,:制作完了]
-   
+
    def subtotal
      item_with_tax * quantity
-   end   
+   end
+   
+   # {0: 製作不可, 1:製作待ち, 2: 製作中, 3: 製作完了}
+   enum product_status: { cannot: 0, waiting: 1, making: 2, done: 3 }
 end

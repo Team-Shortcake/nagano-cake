@@ -33,7 +33,7 @@
          <p class="col-md-2">注文ステータス</p>
          <div class="col-md-10">
             <%= form_with model: @order, url:admin_order_path(@order.id), method: :patch, local: true do | f | %> 
-               <%= f.select :order_status, options_for_select_from_enum(Order, :order_status) %> <%= f.select :order_status, Order.order_statuses_i18n.invert, class:"form-control form-control-sm col-6" %>
+               <%= f.select :order_status, Order.order_statuses_i18n.invert, class:"form-control form-control-sm col-6" %>
                <%= f.submit '更新',class: 'btn btn-success ml-4' %>
             <% end %>
          </div>
@@ -54,9 +54,9 @@
                   <% @order.order_details.each do |order_detail| %>
                    <tr>
                       <td><%= order_detail.item.name %></td>
-                      <td><%= order_detail.item_with_tax.to_s %></td>
+                      <td><%= order_detail.item_with_tax.to_s(:delimited) %></td>
                       <td><%= order_item.quantity %></td>
-                      <td><%= order_item.subtotal.to_s %></td>
+                      <td><%= order_item.subtotal.to_s(:delimited) %></td>
                       <td>
                          <%= form_with model: order_detail, url: admin_order_detail(order_detail.id), method: :patch,  local: true do | f | %>
                          <%= f.select :production_status, options_for_select_from_enum(OrderDetail, :production_status) %>
@@ -68,6 +68,12 @@
                </tbody>
             </table>
          </div>
-         
+         <div class="col-md-4 d-flex align-items-end ">
+            <div class="ml-5">
+               <p>商品合計　　　<%= @order.subtotal.to_s(:delimited) %>円</p>
+               <p>送料　　　　　<%= @order.shipment_charge %>円</p>
+               <p>請求金額合計　<%= @order.total_price.to_s(:delimited) %>円</p>
+            </div>
+         </div>
       </div>
 </div>
