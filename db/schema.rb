@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_18_073951) do
+ActiveRecord::Schema.define(version: 2021_08_18_115209) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 2021_08_18_073951) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "item_id"
-    t.integer "user_id"
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "customer_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -53,19 +53,20 @@ ActiveRecord::Schema.define(version: 2021_08_18_073951) do
   end
 
   create_table "delivery_addresses", force: :cascade do |t|
-    t.integer "user_id"
     t.string "address"
     t.string "postal_code"
     t.string "Delivery_Addresses"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "customer_id"
   end
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "valid_invalid_status", default: 0
   end
 
   create_table "items", force: :cascade do |t|
@@ -90,7 +91,6 @@ ActiveRecord::Schema.define(version: 2021_08_18_073951) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "user_id"
     t.integer "payment"
     t.integer "shipment_charge"
     t.string "postal_code"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 2021_08_18_073951) do
     t.integer "order_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "customer_id"
   end
 
 end
