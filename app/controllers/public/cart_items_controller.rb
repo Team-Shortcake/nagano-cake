@@ -3,18 +3,18 @@ class Public::CartItemsController < ApplicationController
   before_action :cart_item_item?, only: [:create]
 
   def index
-    @cart_items = current_customer.cart_items
+    @cart_items = current_customer.cart_item
     # totalに代入するものは整数値と宣言
     @total = 0
   end
 
   def create
     #カート内商品の有無
-    if current_customer.cart_items.count >= 1
+    if current_user.cart_items.count >= 1
       #カート内商品追加の
-      if nil != current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
+      if nil != current_user.cart_items.find_by(item_id: params[:cart_item][:item_id])
         #カート内の既存商品の情報取得
-        @cart_item_u = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
+        @cart_item_u = current_user.cart_items.find_by(item_id: params[:cart_item][:item_id])
         #既にある情報に個数を合算
         @cart_item_u.quantity += params[:cart_item][:quantity].to_i
         #情報の更新　個数カラムのみ
@@ -25,7 +25,7 @@ class Public::CartItemsController < ApplicationController
         #新しくカートの作成
         @cart_item = CartItem.new(cart_item_params)
         #誰のカートか紐付け
-        @cart_item.customer_id = current_customer.id
+        @cart_item.user_id = current_user.id
         #情報を保存できるか？
         if cart_item.save
           #カートページ遷移
@@ -43,7 +43,7 @@ class Public::CartItemsController < ApplicationController
       end
     else
       @cart_item = CartItem.new(cart_item_params)
-      @cart_item.customer_id = current_customer.id
+      @cart_item.user_id = current_user.id
       if @cart_item.save
         redirect_to cart_items_path
       else
@@ -68,7 +68,7 @@ class Public::CartItemsController < ApplicationController
   end
 
   def destroy_all
-    @cart_item = current_customer.cart_items
+    @cart_item = current_user.cart_items
     @cart_items.destroy_all
     redirect_to cart_items_path
   end
@@ -80,7 +80,7 @@ class Public::CartItemsController < ApplicationController
   end
 
   def cart_item_params
-    params.require(:cart_item).permit(:item_id, :quantity, :customer_id)
+    params.require(:cart_item).permit(:item_id, :quantity, :user_id)
   end
 
 end
