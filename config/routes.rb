@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     get 'about' => 'homes#about'
 
   namespace :admin do
-    resources :items, only:[:index,:show,:edit,:create,:updete]
+    resources :items, only:[:index,:show,:new,:edit,:create,:updete]
     resources :genres, only:[:index,:create,:edit,:update]
     resources :customers, only:[:index,:show,:edit,:create,:update]
     resources :orders, only:[:index,:show,:edit,:update]
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     resources :items, only:[:index,:show]
     resources :cart_items, only:[:index,:edit,:update,:destroy]
     delete '/cart_items' => 'cart_items#destroy_all'
-    resources :orders, only:[:index, :show] 
+    resources :orders, only:[:index, :show]
     # 必要なら、したのオーダーネスト
     post '/orders/session' => 'orders#session_create'
     get '/orders/confirm' => 'orders#confirm'
