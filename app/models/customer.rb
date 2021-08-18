@@ -11,7 +11,7 @@ class Customer < ApplicationRecord
 
 
 
-  # validates :address, presence: true
+  validates :address, presence: true
   validates :postal_code, presence: true
   validates :telephone_number, presence: true
   validates :first_name_kanji, presence: true
