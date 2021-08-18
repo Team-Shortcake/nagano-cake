@@ -112,3 +112,14 @@ $ rails g migration AddカラムToCustomers　カラム:stringr
 
 rails g migration AddFirst_Name_KanjiToCustomers first_name_kanji:string
 ADDRESS
+<h1>カートの中身</h1>
+<% @cart.each do |item| %>
+<% @sum = 0 %>
+<tr>
+<td>商品番号: <%= item.id %></td>
+<td>価格: <%= item.price %>円</td><br>
+<% @sum += item.price %>
+<% end %><br>
+合計金額 <%= @sum %>
+
+</tr>
