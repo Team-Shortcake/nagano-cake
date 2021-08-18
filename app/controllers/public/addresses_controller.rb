@@ -7,7 +7,7 @@ class Public::AddressesController < ApplicationController
   end
 
   def edit
-    @delivery_address = DeliveryAddress.field(params[:])
+    @delivery_address = DeliveryAddress.field(params[:id])
   end
 
   def create

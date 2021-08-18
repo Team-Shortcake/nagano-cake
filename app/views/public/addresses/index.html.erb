@@ -37,10 +37,10 @@
             <td><%= delivery.name %></td>
             <td>
               <%= link_to "編集する", edit_address_path(@delivery_address) %>
-              <%= link_to "削除する", address_path(@delivery_address), method: :DELETE %>
+              <%#= link_to "削除する", address_path(@delivery_address), method: :DELETE %>
             </td>
         </tr>
-
+    <% end %>
     </tbody>
 </table>
 
