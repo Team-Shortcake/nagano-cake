@@ -11,10 +11,21 @@ ja:
 ja:
   enums:
     order_detail:
-      production_status:
+      payment:
         credit: "クレジットカード"
         bank: "銀行振込"
         
+
+
+ja:
+  enums:
+    order_detail:
+      production_status:
+        cannot: "製作不可"
+        waiting: "製作待ち"  
+        making: "製作中"
+        done: "製作完了"
+
         
         
         
@@ -224,3 +235,4 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+

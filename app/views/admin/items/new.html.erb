@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-md-9 mx-auto">
-      <h3>商品編集</h3>
-      <%= form_with model: @item, url: admin_item_path(@item), local: true do |f| %>
+      <h3>商品新規登録</h3>
+       <%= form_with model: @item, url: admin_items_path, local: true do |f| %>
       　<div class="form-inline mb-3">
       　   <%= f.label :image, "商品画像" %>
           <%= f.attachment_field :image %>
@@ -29,7 +29,7 @@
 　　　　　<%= f.radio_button :is_order_status, false %>
 　　　　　<%= f.label :is_order_status, '販売停止中', value: false %>
 　　　　</div>
-　　　　　<%= f.submit '変更を保存', class:"btn btn-success btn-lg" %>
+ 　　　　　　<%= f.submit '新規登録', class:"btn btn-success btn-lg" %>
 　　　<% end %>
 　</div>
 </div>

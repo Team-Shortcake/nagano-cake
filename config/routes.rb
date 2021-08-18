@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     get 'about' => 'homes#about'
 
   namespace :admin do
-    resources :items, only:[:index,:show,:edit,:create,:updete]
+    resources :items, only:[:index,:show,:new,:edit,:create,:updete]
     resources :genres, only:[:index,:create,:edit,:update]
     resources :customers, only:[:index,:show,:edit,:create,:update]
     resources :orders, only:[:index,:show,:edit,:update]
