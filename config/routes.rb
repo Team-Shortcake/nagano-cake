@@ -35,7 +35,7 @@ Rails.application.routes.draw do
       get :search, on: :collection # ジャンル検索機能用
     end
     resources :cart_items, only:[:index,:edit,:update,:destroy]
-    delete '/cart_items' => 'cart_items#destroy_all'
+    delete '/cart_items' => 'cart_items#destroy_all', as: 'item_destroy_all'
     resources :orders, only:[:index, :show]
     # 必要なら、したのオーダーネスト
     post '/orders/session' => 'orders#session_create'
