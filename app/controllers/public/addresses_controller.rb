@@ -1,23 +1,26 @@
 class Public::AddressesController < ApplicationController
-  before_action :authenticate_customer!
+  # before_action :authenticate_customer!
+
 
   def index
-    @delivery = current_customer.delivery_address
+    # @delivery_address = DeliveryAddress.find(params[:id])
+    # @addresses = current_member.addresses
+    @deliveryes = DeliveryAddress.all
     @delivery_address = DeliveryAddress.new
   end
 
   def edit
-    @delivery_address = DeliveryAddress.field(params[:id])
+    @delivery_address = DeliveryAddress.find(params[:id])
   end
 
   def create
     @delivery_address = DeliveryAddress.new(delivery_address_params)
-    @delivery_address.customer_id = current_customer.id
-    @delivery_address = current_customer.shipping_address
-    if @delivery_address.save
-      redirect_back(fallback_location: root_path)
+    @delivery_address.user_id = current_customer.id
+    if @delivery_address.save!
+      # redirect_back(fallback_location: root_path)
+      redirect_to addresse_path
     end
-    
+
   end
 
   def update
@@ -25,12 +28,15 @@ class Public::AddressesController < ApplicationController
 
   def destroy
   end
-  
+
   private
-  
+
   def delivery_address_params
   	params.require(:delivery_address).permit(:postal_code, :address, :name)
   end
-  
-  
+
+
 end
+
+# app/controllers/public/addresses_controller.rb:15:in `<class:AddressesController>'
+# app/controllers/public/addresses_controller.rb:1:in `<main>'
