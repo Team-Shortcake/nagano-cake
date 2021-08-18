@@ -1,25 +1,25 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
 
-     def after_sign_in_path_for(resource)
+ 
+
+  protected
+  
+  # def after_sign_in_path_for(resource)
+  #   customer_path(resource)
+  # end
+
+
+  def after_sign_in_path_for(resource)
       case resource
       when Admin
         admin_orders_path
       when Customer
-        items_path
+        customer_path(resource)
       end
-     end
-
-  protected
-  
-  def after_sign__path_for(resource)
-    customer_path(resource)
   end
   
-  def after_sign_in_path_for(resource)
-    customer_path(resource)
-  end
-
+  
   def after_sign_out_path_for(resource)
     root_path
   end
