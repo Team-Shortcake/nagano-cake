@@ -5,6 +5,7 @@ class Public::CustomersController < ApplicationController
   end
 
   def edit
+    @customer = Customer.find(params[:id])
   end
 
   def update
@@ -16,8 +17,9 @@ class Public::CustomersController < ApplicationController
     end
   end
   private
-# リクアイアできない
-	def customer_params
+
+
+  def customer_params
   	params.require(:customer).permit(:last_name_kanji, :first_name_kanji, :last_name_kana, :first_name_kana, :email, :postal_code, :address, :telephone_number)
   end
 end
