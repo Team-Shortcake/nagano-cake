@@ -11,7 +11,7 @@ class Public::CartItemsController < ApplicationController
   def create
     #カート内商品の有無
     if current_customer.cart_items.count >= 1
-      #カートに入れた商品はすでにカートに追加済か？
+      #カート内商品追加の
       if nil != current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
         #カート内の既存商品の情報取得
         @cart_item_u = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
