@@ -25,7 +25,7 @@
                     <%= order.created_at.to_s(:datetime_jp) %>
                   <% end %>
                 </td>
-                <td><%= order.name %></td>
+                <td><%= order.delivery_name %></td>
                 <td><%= order.order_detail.sum(:quantity) %></td>
                 <td><%= order.order_status_i18n %></td>
               </tr>

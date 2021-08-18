@@ -1,10 +1,9 @@
 <div class='container'>
   <div class='row'>
     <div class='col-md-12 col-lg-12 px-sm-0, content'>
-    <span class="title">　<%= @customer.last_name %><%= @customer.first_name %>さんの会員詳細　</span>
-
+    <h3><span class="bg-light"><%= @customer.last_name_kanji %><%= @customer.first_name_kanji %>さんの会員詳細</span></h3>
     <table cellpadding="10">
-     
+
       <colgroup>
         <col style="width: 25%;">
         <col style="width: 25%;">
@@ -17,8 +16,8 @@
       </tr>
       <tr>
         <td>氏名</td>
-       
-        <td colspan="3"><%= @customer.last_name %><%= @customer.first_name %></td>
+
+        <td colspan="3"><%= @customer.last_name_kanji %><%= @customer.first_name_kanji %></td>
       </tr>
       <tr>
         <td>フリガナ</td>
@@ -34,7 +33,7 @@
       </tr>
       <tr>
         <td>電話番号</td>
-        <td colspan="3"><%= @customer.phone_number %></td>
+        <td colspan="3"><%= @customer.telephone_number %></td>
       </tr>
       <tr>
         <td>メールアドレス</td>
@@ -43,10 +42,10 @@
       <tr>
         <td>会員ステータス</td>
         <td colspan="3">
-          <% if @customer.is_active %>
-            <div style="color: green;">有効</div>
+          <% if @customer.is_user_status %>
+           <div style="color: #CCCCCC">退会</div>
           <% else %>
-            <div style="color: #CCCCCC">退会</div>
+             <div style="color: green;">有効</div>
           <% end %>
         </td>
       </tr>
