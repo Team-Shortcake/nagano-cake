@@ -23,13 +23,6 @@ class Public::OrdersController < ApplicationController
   end
 
   def create
-<<<<<<< HEAD
-    @order = Order.new(order_params)
-    @order.customer_id = current_customer.id
-    @order.save
-    current_customer.cart_items.destroy_all
-    redirect_to order_thanks_path
-=======
     @order = Order.new(order_params) #初期化代入
     @order.customer_id = current_customer.id #自身のidを代入
     @order.save #orderに保存
@@ -44,7 +37,6 @@ class Public::OrdersController < ApplicationController
     end
     current_customer.cart_item.destroy_all
     redirect_to orders_thanks_path
->>>>>>> origin/develop
   end
 
   def confirm
