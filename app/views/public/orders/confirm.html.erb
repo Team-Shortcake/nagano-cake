@@ -1,21 +1,17 @@
 <div class="container">
-  <div class="col-lg-10">
-    <div class="row">
-      <h3 class="heading">注文情報確認</h3>
-    </div>
-
-    <div class="row">
-
-      <div class="col-8">
-        <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>商品名</th>
-                <th>単価（税込）</th>
-                <th>数量</th>
-                <th>小計</th>
-              </tr>
-            </thead>
+  <h2>注文情報確認</h2>
+  <%= form_with(model: @order, local: true) do |f| %>
+  <!-- テーブル -->
+  <div class="row">
+    <div class="col-xs-6">
+      <table align="left" class="table table-bordered">
+        <tr>
+          <th>商品名</th>
+          <th>単価(税込)</th>
+          <th>数量</th>
+          <th>小計</th>
+        </tr>
+        <tbody>
       
         <% @cart_items.each do |cart_item| %>
         <% @total+= (cart_item.item.price*1.1*cart_item.quantity).floor %>
