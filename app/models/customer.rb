@@ -15,11 +15,6 @@ class Customer < ApplicationRecord
   validates :last_name_kanji, presence: true
   validates :first_name_kana, presence: true
   validates :last_name_kana, presence: true
-  
-  def active_for_authentication?
-    super && (self.is_user_status = false)
-  end
-
 
 
     # 注文ステータス（0=支払待ち / 1=支払済み / 2=製作中/ 3=発送準備中 / 4=発送済み）
@@ -30,4 +25,8 @@ class Customer < ApplicationRecord
       preparing: 3,
       shipped: 4
   }
+  
+  def active_for_authentication?
+    super && (self.is_user_status == false)
+  end
 end

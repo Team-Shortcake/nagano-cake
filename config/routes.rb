@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     resources :items, only:[:index,:show] do
       get :search, on: :collection # ジャンル検索機能用
     end
-    resources :cart_items, only:[:index,:edit,:create,:update,:destroy] do
+    resources :cart_items, only:[:index,:create,:update,:destroy] do
       delete '/cart_items' => 'cart_items#destroy_all', as: 'destroy_all'
 
     end
@@ -45,15 +45,9 @@ Rails.application.routes.draw do
     get '/orders/thanks' => 'orders#thanks'
     resources :orders, only:[:new,:create,:index, :show]
 
-    resources :customers, only:[:show,:edit,:update,:destroy]
     get '/customers/quit_confirmation' => 'customers#quit_confirmation'
     patch '/customers/quit' => 'customers#quit'
-    get 'unsubscribe/:name' => 'customers#unsubscribe', as: 'confirm_unsubscribe' # 退会機能
-    # patch '/customers/withdraw/:name' => 'customers#withdraw', as: 'withdraw_customer'
-    
-    patch '/customers/withdraw' => 'customers#destroy'
-    
-    put 'withdraw/:name' => 'customers#withdraw'
+    resources :customers, only:[:show,:edit,:update,:destroy]
     resources :addresses, only:[:index, :edit, :create, :destroy, :update]
   end
 

@@ -16,16 +16,20 @@ class Public::CustomersController < ApplicationController
       render "edit"
     end
   end
-  def unsubscribe
-    @customer = Customer.find(params[:name])
+
+  def quit_confirmation
   end
 
-  def withdraw
-      current_customer.update(is_user_status: false)
-      reset_session
-      redirect_to root_path
+  def quit
+    @customer = current_customer
+    @customer.update(is_user_status: true)
+    reset_session
+    redirect_to root_path
   end
 
+  #   def unsubscribe
+  #   @user = User.find_by(name: params[:name])
+  # end
 
   private
 
