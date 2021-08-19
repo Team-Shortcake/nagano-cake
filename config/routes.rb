@@ -48,7 +48,7 @@ Rails.application.routes.draw do
     resources :customers, only:[:show,:edit,:update,:destroy]
     get '/customers/quit_confirmation' => 'customers#quit_confirmation'
     patch '/customers/quit' => 'customers#quit'
-    resources :addresses, only:[:index, :edit, :create, :destroy]
+    resources :addresses, only:[:index, :edit, :create, :destroy, :update]
   end
 
 end

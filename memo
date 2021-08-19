@@ -124,3 +124,6 @@ ADDRESS
 
 </tr>
 aaaaaa
+
+	is_user_status	退会フラグ			boolean	◯				FALSE	有効、退会
+	
