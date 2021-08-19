@@ -10,11 +10,11 @@ class Public::CartItemsController < ApplicationController
 
   def create
     #カート内商品の有無
-    if current_customer.cart_items.count >= 1
+    if current_customer.cart_item.count >= 1
       #カート内商品追加の
-      if nil != current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
+      if nil != current_customer.cart_item.find_by(item_id: params[:cart_item][:item_id])
         #カート内の既存商品の情報取得
-        @cart_item_u = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
+        @cart_item_u = current_customer.cart_item.find_by(item_id: params[:cart_item][:item_id])
         #既にある情報に個数を合算
         @cart_item_u.quantity += params[:cart_item][:quantity].to_i
         #情報の更新　個数カラムのみ
@@ -43,7 +43,7 @@ class Public::CartItemsController < ApplicationController
       end
     else
       @cart_item = CartItem.new(cart_item_params)
-      @cart_item.current_customer_id = current_customer.id
+      @cart_item.customer_id = current_customer.id
       if @cart_item.save
         redirect_to cart_items_path
       else
@@ -68,8 +68,8 @@ class Public::CartItemsController < ApplicationController
   end
   
   def destroy_all
-    @cart_item = current_customer.cart_items
-    @cart_items.destroy_all
+    @cart_item = current_customer.cart_item
+    @cart_item.destroy_all
     redirect_to cart_items_path
   end
   

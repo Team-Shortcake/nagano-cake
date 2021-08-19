@@ -34,14 +34,16 @@ Rails.application.routes.draw do
     resources :items, only:[:index,:show] do
       get :search, on: :collection # ジャンル検索機能用
     end
-    resources :cart_items, only:[:index,:edit,:update,:destroy]
-    delete '/cart_items' => 'cart_items#destroy_all', as: 'item_destroy_all'
-    resources :orders, only:[:index, :show]
-    # 必要なら、したのオーダーネスト
+    resources :cart_items, only:[:index,:edit,:create,:update,:destroy] do
+      delete '/cart_items' => 'cart_items#destroy_all', as: 'destroy_all'
+      
+    end
+    
     post '/orders/session' => 'orders#session_create'
     get '/orders/confirm' => 'orders#confirm'
     post '/orders/confirm' => 'orders#confirm'
     get '/orders/thanks' => 'orders#thanks'
+    resources :orders, only:[:new,:create,:index, :show] 
 
     resources :customers, only:[:show,:edit,:update,:destroy]
     get '/customers/quit_confirmation' => 'customers#quit_confirmation'
