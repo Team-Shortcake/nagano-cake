@@ -23,18 +23,18 @@ class Public::OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
-    @order.customer_id = current_customer.id
-    @order.save
-  current_customer.cart_item.each do |cart_item| #カートの商品を1つずつ取り出しループ
-  　　@order_item = OrderItem.new #初期化宣言
-  　　@order_item.item_id = cart_item.item_id #商品idを注文商品idに代入
-  　　@order_item.quantity = cart_item.quantity #商品の個数を注文商品の個数に代入
-  　　@order_item.price = (cart_item.item.price*1.1).floor #消費税込みに計算して代入
-  　　@order_item.order_id =  @order.id #注文商品に注文idを紐付け
-  　　@order_item.save #注文商品を保存
-  end
-  　
+    @order = Order.new(order_params) #初期化代入
+    @order.customer_id = current_customer.id #自身のidを代入
+    @order.save #orderに保存
+    #order_itmemの保存
+    current_customer.cart_item.each do |cart_item| #カートの商品を1つずつ取り出しループ
+      @order_item = OrderDetail.new #初期化宣言
+      @order_item.item_id = cart_item.item_id #商品idを注文商品idに代入
+      @order_item.quantity = cart_item.quantity #商品の個数を注文商品の個数に代入
+      @order_item.item_with_tax = (cart_item.item.price*1.1).floor #消費税込みに計算して代入
+      @order_item.order_id =  @order.id #注文商品に注文idを紐付け
+      @order_item.save #注文商品を保存
+    end
     current_customer.cart_item.destroy_all
     redirect_to orders_thanks_path
   end
