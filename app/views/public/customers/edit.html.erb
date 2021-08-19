@@ -30,5 +30,6 @@
 <div class="actions">
   <%= f.submit "編集内容を保存" %>
   <!--退会ボタン-->
+  <%= link_to '退会する', customers_quit_confirmation_path(@customer), class:'btn btn-secondary withdraw-btn' %>
 </div>
 <% end %>
