@@ -9,8 +9,8 @@ class Public::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
-    @order_detail = @order.order_details
-    @total = 0
+    @order_details = @order.order_details
+    @order_detail = OrderDetail.subtotal
 
     # @order_item = @order.order_items
     # @total = 0 #変数提議　合計を計算する変数
