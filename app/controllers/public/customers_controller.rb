@@ -17,8 +17,15 @@ class Public::CustomersController < ApplicationController
     end
   end
   
- 
+  def quit_confirmation
+  end
   
+  def quit
+    @customer = current_customer
+    @customer.update(is_user_status: true)
+    reset_session
+    redirect_to root_path
+  end
   
   #   def unsubscribe
   #   @user = User.find_by(name: params[:name])

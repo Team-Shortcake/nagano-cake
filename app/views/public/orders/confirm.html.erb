@@ -1,25 +1,30 @@
 <div class="container">
-  <h2>注文情報確認</h2>
-  <!-- テーブル -->
-  <div class="row">
-    <div class="col-xs-6">
-      <table align="left" class="table table-bordered">
-        <tr>
-          <th>商品名</th>
-          <th>単価(税込)</th>
-          <th>数量</th>
-          <th>小計</th>
-        </tr>
-        <tbody>
+  <div class="col-lg-10">
+    <div class="row">
+      <h3 class="heading">注文情報確認</h3>
+    </div>
+
+    <div class="row">
+
+      <div class="col-8">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>商品名</th>
+                <th>単価（税込）</th>
+                <th>数量</th>
+                <th>小計</th>
+              </tr>
+            </thead>
       
         <% @cart_items.each do |cart_item| %>
-        <% @total+= (cart_item.item.item_with_tax*1.1*cart_item.item_with_tax).foor %>
+        <% @total+= (cart_item.item.price*1.1*cart_item.quantity).floor %>
       
           <tr>
-            <td><%= cart_item.item.item_name %></td>
-            <td><%= (cart_item.item.item_with_tax*1.1).floor %></td>
+            <td><%= cart_item.item.name %></td>
+            <td><%= (cart_item.item.price*1.1).floor %></td>
             <td><%= cart_item.quantity %></td>
-            <td><%= (cart_item.item.item_with_tax*1.1*cart_item.quantity).foor %></td>
+            <td><%= (cart_item.item.price*1.1*cart_item.quantity).floor %></td>
           </tr>
         <% end %>
         </tbody>
@@ -46,20 +51,17 @@
   
   <!-- テーブル end -->
   <p><strong>支払方法</strong><%= @order.payment %></p><br>
-  <p><strong>お届け先</strong><%= @order.postal_code %> <%= @order.delivery_address %> <%= @order.delivery_name %></p><br>
+  <p><strong>お届け先</strong>〒<%= @order.postal_code %> <%= @order.delivery_address %> <%= @order.delivery_name %></p><br>
   <%= f.hidden_field :payment ,:value => @order.payment %>
 	<%= f.hidden_field :shipment_charge ,:value => 800 %>
 	<%= f.hidden_field :delivery_address,:value => @order.delivery_address %>
 	<%= f.hidden_field :postal_code,:value => @order.postal_code %>
-	<%= f.hidden_field :name,:value => @order.dname %>
+	<%= f.hidden_field :delivery_name,:value => @order.delivery_name %>
 	<%= f.hidden_field :total_price ,:value => @total %><br><br>
 	
 	<div class="text-center">
 	  <%= f.submit "購入を確定する", class: "btn btn-success text-center btn-lg" %>
 	</div>
 	<% end %>
-	<%= form_with model:@order, url: new_order_path, local true do |f| %>
-	<%= f.hidden_field :order,:value => @order %>
-	<%= f.submit '入力画面へ戻る' ,class: "btn btn-primary" %>
-	<% end %>
+	
 </div>
