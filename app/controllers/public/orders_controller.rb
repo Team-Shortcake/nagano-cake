@@ -18,7 +18,7 @@ class Public::OrdersController < ApplicationController
 
   def new
     @customer = current_customer
-    @order = Order.new
+    @order = Order.new(order_params)
     @address = DeliveryAddress.new
   end
 

@@ -10,11 +10,11 @@ class Public::CartItemsController < ApplicationController
 
   def create
     #カート内商品の有無
-    if current_user.cart_items.count >= 1
+    if current_customer.cart_item.count >= 1
       #カート内商品追加の
-      if nil != current_user.cart_items.find_by(item_id: params[:cart_item][:item_id])
+      if nil != current_customer.cart_item.find_by(item_id: params[:cart_item][:item_id])
         #カート内の既存商品の情報取得
-        @cart_item_u = current_user.cart_items.find_by(item_id: params[:cart_item][:item_id])
+        @cart_item_u = current_customer.cart_item.find_by(item_id: params[:cart_item][:item_id])
         #既にある情報に個数を合算
         @cart_item_u.quantity += params[:cart_item][:quantity].to_i
         #情報の更新　個数カラムのみ
@@ -25,7 +25,7 @@ class Public::CartItemsController < ApplicationController
         #新しくカートの作成
         @cart_item = CartItem.new(cart_item_params)
         #誰のカートか紐付け
-        @cart_item.user_id = current_user.id
+        @cart_item.current_customer_id = current_customer.id
         #情報を保存できるか？
         if cart_item.save
           #カートページ遷移
@@ -43,7 +43,7 @@ class Public::CartItemsController < ApplicationController
       end
     else
       @cart_item = CartItem.new(cart_item_params)
-      @cart_item.user_id = current_user.id
+      @cart_item.customer_id = current_customer.id
       if @cart_item.save
         redirect_to cart_items_path
       else
@@ -68,8 +68,8 @@ class Public::CartItemsController < ApplicationController
   end
   
   def destroy_all
-    @cart_item = current_user.cart_items
-    @cart_items.destroy_all
+    @cart_item = current_customer.cart_item
+    @cart_item.destroy_all
     redirect_to cart_items_path
   end
   
@@ -80,7 +80,7 @@ class Public::CartItemsController < ApplicationController
   end
   
   def cart_item_params
-    params.require(:cart_item).permit(:item_id, :quantity, :user_id)
+    params.require(:cart_item).permit(:item_id, :quantity, :current_customer_id)
   end
   
 end
