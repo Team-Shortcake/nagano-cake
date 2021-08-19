@@ -36,19 +36,26 @@ Rails.application.routes.draw do
     end
     resources :cart_items, only:[:index,:edit,:create,:update,:destroy] do
       delete '/cart_items' => 'cart_items#destroy_all', as: 'destroy_all'
-      
+
     end
-    
+
     post '/orders/session' => 'orders#session_create'
     get '/orders/confirm' => 'orders#confirm'
     post '/orders/confirm' => 'orders#confirm'
     get '/orders/thanks' => 'orders#thanks'
-    resources :orders, only:[:new,:create,:index, :show] 
+    resources :orders, only:[:new,:create,:index, :show]
 
     resources :customers, only:[:show,:edit,:update,:destroy]
     get '/customers/quit_confirmation' => 'customers#quit_confirmation'
     patch '/customers/quit' => 'customers#quit'
+    get 'unsubscribe/:name' => 'customers#unsubscribe', as: 'confirm_unsubscribe' # 退会機能
+    # patch '/customers/withdraw/:name' => 'customers#withdraw', as: 'withdraw_customer'
+    
+    patch '/customers/withdraw' => 'customers#destroy'
+    
+    put 'withdraw/:name' => 'customers#withdraw'
     resources :addresses, only:[:index, :edit, :create, :destroy, :update]
   end
 
 end
+

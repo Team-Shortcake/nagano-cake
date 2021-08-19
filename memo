@@ -124,6 +124,26 @@ ADDRESS
 
 </tr>
 aaaaaa
+	
+	
+	
+hideアクションを作成します。
+・@user.update(is_deleted: true)で、@userのis_deletedカラムをtrueにupdateします。
+・reset_sessionで、ユーザーをログアウトさせます。
+・redirect_to root_pathで、ログアウト後ルートパスに飛ばします。
 
 	is_user_status	退会フラグ			boolean	◯				FALSE	有効、退会
-	
+
+    def hide
+        @user = User.find(params[:id])
+        #is_deletedカラムにフラグを立てる(defaultはfalse)
+        @user.update(is_deleted: true)
+        #ログアウトさせる
+        reset_session
+        flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
+        redirect_to root_path
+    end
+ 
+  user.rb
+ログインする時に退会済み(is_deleted==true)のユーザーを弾くためのメソッドを作成します。
+super && (self.is_deleted == false)で、userのis_deletedがfalseならtrueを返すようにしています。
