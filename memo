@@ -147,3 +147,11 @@ hideアクションを作成します。
   user.rb
 ログインする時に退会済み(is_deleted==true)のユーザーを弾くためのメソッドを作成します。
 super && (self.is_deleted == false)で、userのis_deletedがfalseならtrueを返すようにしています。
+
+# ・最大文字数：length: { maximum: 20 }
+# ・最小文字数：length: { minimum: 20 }
+# ・文字数の範囲：length: { in: 1..30 }
+# ・空でない：presence: true
+# ・他と被っていない：uniqueness: true
+# ・正規表現：format: { with: /<正規表現>/}
+# ・「<属性名>_confirmation」と一致：confirmation: true
