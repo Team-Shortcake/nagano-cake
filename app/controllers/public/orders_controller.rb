@@ -1,6 +1,6 @@
 class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!
-  before_action :request_post?, only: [:confirm]
+  before_action :requrest_post?, only: [:confirm]
   before_action :order_new?, only: [:new]
 
   def index
@@ -16,7 +16,7 @@ class Public::OrdersController < ApplicationController
 
   def new
     @customer = current_customer
-    @order = Order.new
+    @order = Order.new(order_params)
     @address = DeliveryAddress.new
   end
 
@@ -43,8 +43,8 @@ class Public::OrdersController < ApplicationController
   #分岐
     if params[:order][:address_number] == "1" #address_numberが　”1”　なら下記　ご自身の住所が選ばれたら
       @order.postal_code = current_customer.postal_code #自身の郵便番号をorderの郵便番号に入れる
-      @order.delivery_address = current_customer.address #自身の住所をorderの住所に入れる
-      @order.delivery_name = current_customer.last_name_kanji+current_customer.first_name_kanji #自身の宛名をorderの宛名に入れる
+      @order.address = current_customer.address #自身の住所をorderの住所に入れる
+      @order.name = current_customer.last_name_kanji+current_customer.first_name_kanji #自身の宛名をorderの宛名に入れる
 
     elsif  params[:order][:address_number] ==  "2" #address_numberが　”2”　なら下記　登録済からの選択が選ばれたら
       @order.postal_code = DeliveryAddress.find(params[:order][:address]).postal_code #newページで選ばれた配送先住所idから特定して郵便番号の取得代入
@@ -59,14 +59,14 @@ class Public::OrdersController < ApplicationController
       @address.customer_id = current_customer.id #newページで新しいお届け先に入力したmember_idを取得代入
       if @address.save #保存
       @order.postal_code = @address.postal_code #上記で代入された郵便番号をorderに代入
-      @order.name = @address.delivery_name #上記で代入された宛名をorderに代入
-      @order.address = @address.delivery_address #上記で代入された住所をorderに代入
+      @order.name = @address.name #上記で代入された宛名をorderに代入
+      @order.address = @address.address #上記で代入された住所をorderに代入
       else
        render 'new'
       end
     end
 
-    @cart_items = CartItem.where(customer_id: current_customer.id)
+    @cart_items = CartItem.whre(customer_id: current_customer.id)
     @total = 0
   end
 
@@ -79,12 +79,12 @@ class Public::OrdersController < ApplicationController
     redirect_to cart_items_path, notice: "カートに商品を入れてください。" if current_customer.cart_items.blank?
   end
 
-  def request_post?
-    redirect_to new_order_path, notice: "もう一度最初から入力してください。" unless request.post?
+  def requrest_post?
+    redirect_to new_order_path, notice: "もう一度最初から入力してください。" unless requrest_post?
   end
 
   def order_params
-    params.permit(:payment, :delivery_address, :shipment_charge, :postal_code, :delivery_name, :total_price)
+    params.require(:order).permit(:payment, :delivery_address, :shipment_charge, :postal_code, :delivery_name, :total_price)
   end
 
   def address_params
