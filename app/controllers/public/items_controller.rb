@@ -1,4 +1,5 @@
 class Public::ItemsController < ApplicationController
+  
   def index
     @items = Item.where(is_order_status: 0).page(params[:page]).per(8) 
     @quantity = Item.count 
