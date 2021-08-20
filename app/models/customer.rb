@@ -27,7 +27,7 @@ class Customer < ApplicationRecord
       preparing: 3,
       shipped: 4
   }
-  
+
   def active_for_authentication?
     super && (self.is_user_status == false)
   end
