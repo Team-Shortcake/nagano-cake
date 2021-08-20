@@ -18,8 +18,9 @@
         <th style="width: 180px;">小計</th>
         <th style="width: 180px;"></th>
       </tr>
+      
+      <% @cart_items.each do |cart_item| %>
 
-      <%= @cart_items.each do |cart_item| %>
       <tr>
         <td>
           <%= link_to item_path(cart_item.item_id) do %>
