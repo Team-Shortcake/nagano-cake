@@ -55,11 +55,11 @@
     <tbody>
     <% @order_details.each do |order_detail| %>
       <tr>
-        <td><%= order_item.item.name %></td>
-						<td><%= order_item.items_tax_included_price %></td>
-						<td><%= order_item.quantity %></td>
-						<td><%= (order_item.items_tax_included_price*order_item.quantity) %>
-							<% @total += (order_item.items_tax_included_price*order_item.quantity) %>
+        <td><%= order_detail.item.name %></td>
+						<td><%= order_detail.item_with_tax %></td>
+						<td><%= order_detail.quantity %></td>
+						<td><%= (order_detail.item_with_tax*order_detail.quantity) %>
+							<% @total += (order_detail.item_with_tax*order_detail.quantity) %>
 						</td>
       </tr>
     <% end %>
