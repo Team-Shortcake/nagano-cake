@@ -60,7 +60,7 @@ class Public::OrdersController < ApplicationController
       if @address.save #保存
       @order.postal_code = @address.postal_code #上記で代入された郵便番号をorderに代入
       @order.delivery_name = @address.name #上記で代入された宛名をorderに代入
-      @order.deaddress = @address.address #上記で代入された住所をorderに代入
+      @order.delivery_address = @address.address #上記で代入された住所をorderに代入
       else
        render 'new'
       end
