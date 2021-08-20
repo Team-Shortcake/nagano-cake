@@ -4,16 +4,14 @@ class Public::OrdersController < ApplicationController
   before_action :order_new?, only: [:new]
 
   def index
-    @order = current_customer.order
+    @order = current_customer.orders
   end
 
   def show
     @order = Order.find(params[:id])
     @order_details = @order.order_details
-    @order_detail = OrderDetail.subtotal
 
-    # @order_item = @order.order_items
-    # @total = 0 #変数提議　合計を計算する変数
+    @total = 0 #変数提議　合計を計算する変数
   end
 
   def new
@@ -27,7 +25,7 @@ class Public::OrdersController < ApplicationController
     @order.customer_id = current_customer.id #自身のidを代入
     @order.save #orderに保存
     #order_itmemの保存
-    current_customer.cart_item.each do |cart_item| #カートの商品を1つずつ取り出しループ
+    current_customer.cart_items.each do |cart_item| #カートの商品を1つずつ取り出しループ
       @order_item = OrderDetail.new #初期化宣言
       @order_item.item_id = cart_item.item_id #商品idを注文商品idに代入
       @order_item.quantity = cart_item.quantity #商品の個数を注文商品の個数に代入
@@ -35,7 +33,7 @@ class Public::OrdersController < ApplicationController
       @order_item.order_id =  @order.id #注文商品に注文idを紐付け
       @order_item.save #注文商品を保存
     end
-    current_customer.cart_item.destroy_all
+    current_customer.cart_items.destroy_all
     redirect_to orders_thanks_path
   end
 
@@ -78,7 +76,7 @@ class Public::OrdersController < ApplicationController
   private
 
   def order_new?
-    redirect_to cart_items_path, notice: "カートに商品を入れてください。" if current_customer.cart_item.blank?
+    redirect_to cart_items_path, notice: "カートに商品を入れてください。" if current_customer.cart_items.blank?
   end
 
   def request_post?
