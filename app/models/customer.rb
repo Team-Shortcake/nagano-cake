@@ -19,6 +19,7 @@ class Customer < ApplicationRecord
   validates :first_name_kana, presence: true
   validates :last_name_kana, presence: true
 
+
     # 注文ステータス（0=支払待ち / 1=支払済み / 2=製作中/ 3=発送準備中 / 4=発送済み）
   enum order_status: {
       waiting: 0,

@@ -36,20 +36,20 @@ Rails.application.routes.draw do
     end
     resources :cart_items, only:[:index,:create,:update,:destroy] do
       delete '/cart_items' => 'cart_items#destroy_all', as: 'destroy_all'
-      
+
     end
-    
+
     post '/orders/session' => 'orders#session_create'
     get '/orders/confirm' => 'orders#confirm'
     post '/orders/confirm' => 'orders#confirm'
     get '/orders/thanks' => 'orders#thanks'
-    resources :orders, only:[:new,:create,:index, :show] 
+    resources :orders, only:[:new,:create,:index, :show]
 
     get '/customers/quit_confirmation' => 'customers#quit_confirmation'
     patch '/customers/quit' => 'customers#quit'
     resources :customers, only:[:show,:edit,:update,:destroy]
-    
     resources :addresses, only:[:index, :edit, :create, :destroy, :update]
   end
 
 end
+

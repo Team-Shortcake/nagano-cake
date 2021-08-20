@@ -7,7 +7,7 @@
       <div><%= link_to "カートを空にする", cart_item_destroy_all_path(@cart_items), method: :delete, class:"btn-danger" %></div>
     </div>
   </div>
-  
+
   <div class="row">
     <h4><%= notice %></h4>
     <table class="tabule-bordered">
@@ -19,7 +19,8 @@
         <th style="width: 180px;"></th>
       </tr>
       
-      <%= @cart_items.each do |cart_item| %>
+      <% @cart_items.each do |cart_item| %>
+
       <tr>
         <td>
           <%= link_to item_path(cart_item.item_id) do %>
@@ -47,14 +48,14 @@
       </tr>
       <% end %>
     </table>
-    
+
   </div>
-  
+
    <div class="row">
     <div class="col-xs-9">
-      <div style="margin-top:50px;"><%= link_to "買い物を続ける", root_path, class:"btn btn-primary" %></div>
+      <div style="margin-top:50px;"><%= link_to "買い物を続ける", items_path, class:"btn btn-primary" %></div>
     </div>
-  
+
   <div class="row">
     <div class="col-xs-3">
       <div class="total-price-box">
@@ -63,7 +64,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-xs-4"></div>
     <div class="col-xs-4 cart_continue_to_order">
@@ -71,5 +72,5 @@
     </div>
     <div class="col-xs-4"></div>
   </div>
-  
+
 </div>

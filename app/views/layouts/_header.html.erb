@@ -4,9 +4,13 @@
       <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">-->
       <!--<span class="navbar-toggler-icon"></span>-->
       <!--</button>-->
-      
+
       <!--<div class="collapse navbar-collapse" id="navbarTogglerDemo02">-->
-      <h1><%= link_to "ながのCAKE", root_path, class:"navbar-brand" %></h1>
+       
+      <h1><%= link_to root_path, class:"navbar-brand" do %>
+          <%= image_tag 'Nagano Cake.jpg', :size =>'80x80' %>
+          <% end %>
+      </h1>
       <ul class="navbar-nav justify-content-end">
           <% if customer_signed_in? %>
             <li class:"nav-item"><%= link_to 'マイページ', new_customer_session_path, class:"nav-link" %></li>
