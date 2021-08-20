@@ -1,67 +1,105 @@
 <div class="container">
-  <h2>新規登録</h2>
+  <h3><span class="bg-light">新規会員登録</span></h3>
   <%= form_with model: @customer, url: customer_registration_path, id: 'new_customer', class: 'new_customer', local: true do |f| %>
   
     <%= render "customers/shared/error_messages", resource: resource %>
+   <div class="row">
+     <p class="col-sm-2 text-right">名前</p>
+     <p class="col-sm-2 text-right">(姓)</p>
+     <div class="field col-sm-3">
+        <%= f.text_field :last_name, autofocus: true, placeholder: "山田" %>
+     </div>
   
-    <div class="field">
-      <%= f.label :"(姓)" %><br />
-      <%= f.text_field :first_name_kanji, autofocus: true, placeholder: "山田" %>
-    </div>
+      <p class="col-sm-2 text-right">(名)</p>
+      <div class="field col-sm-3">
+      <%= f.text_field :first_name, autofocus: true, placeholder: "太郎" %>
+     </div>
+   </div>
   
-    <div class="field">
-      <%= f.label :"(名)" %><br />
-      <%= f.text_field :last_name_kanji, autofocus: true, placeholder: "太郎" %>
-    </div>
-      <div class="field">
-      <%= f.label :"(セイ)" %><br />
-      <%= f.text_field :first_name_kana, autofocus: true, placeholder: "セイ" %>
-    </div>
-      <div class="field">
-      <%= f.label :"(メイ)" %><br />
-      <%= f.text_field :last_name_kana, autofocus: true, placeholder: "メイ" %>
-    </div>
-    <!--名前ここまで-->
+   <div class="row">
+     <p class="col-sm-2 text-right">フリガナ</p>
+     <p class="col-sm-2 text-right">(セイ)</p>
+     <div class="field col-sm-3">
+       <%= f.text_field :last_name_kana, autofocus: true, placeholder: "セイ" %>
+     </div>
   
+    <p class="col-sm-2 text-right">(メイ)</p>
+    <div class="field col-sm-3">
+    <%= f.text_field :first_name_kana, autofocus: true, placeholder: "メイ" %>
+   </div>
   
+  </div>
+  <!--名前ここまで-->
   
-    <div class="field">
-      <%= f.label :メールアドレス %><br />
+    <div class="row">
+    
+     <p class="col-sm-2 text-right">メールアドレス</p>
+     <p class="col-sm-2 text-right"></p>
+      <div class="field col-sm-3">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "aaa@aaa" %>
+      </div>
     </div>
   
-    <div class="field">
-      <%= f.label :"郵便番号(ハイフンナシ)" %><br>
-      <%= f.text_field :postal_code, placeholder: "0000000" %>
-    </div>
+   <div class="row">
+   <p class="col">郵便番号(ハイフンなし)</p>
   
-    <div class="field">
-      <%= f.label :"住所" %><br>
-      <%= f.text_field :address, placeholder: "長野県長野市" %>
-    </div>
+   <div class="field col-sm-8">
+    <%= f.text_field :postal_code, autofocus: true, placeholder: "0000000" %>
+  </div>
   
-    <div class="field">
-      <%= f.label :"電話番号(ハイフンナシ)" %><br>
-      <%= f.text_field :telephone_number, placeholder: "０８０００００００００" %>
-    </div>
+  </div>
   
-    <div class="field">
-      <%= f.label :"パスワード" %>
-      <% if @minimum_password_length %>
-      (<%= @minimum_password_length %>文字以上)
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
+   <div class="row">
+   <p class="col-sm-2 text-right">住所</p>
+   <p class="col-sm-2 text-right"></p>
   
-    <div class="field">
-      <%= f.label :"パスワード(確認用)" %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+   <div class="field col-sm-8">
+    <%= f.text_field :address, :size => "70*30", autofocus: true, placeholder: "長野県長野市" %>
+  </div>
   
-    <div class="actions">
-      <%= f.submit "新規登録" %>
-    </div>
-  <% end %>
+  </div>
+  
+   <div class="row">
+   <p class="col">電話番号(ハイフンなし)</p>
+  
+  
+   <div class="field col-sm-8">
+    <%= f.text_field :phone_number, autofocus: true, placeholder: "08000000000" %>
+  </div>
+  
+  </div>
+  
+   <div class="row">
+   <p class="col">パスワード
+    <% if @minimum_password_length %>
+    (<%= @minimum_password_length %>文字以上)
+    <% end %><br />
+   </p>
+  
+  <div class="field col-sm-8">
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+  
+  </div>
+  
+   <div class="row">
+   <p class="col">パスワード(確認用)</p>
+  
+
+  <div class="field col-sm-8">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+  
+  </div>
+  
+  <div class="row mt-2">
+   <p class="col"></p>
+  <div class="actions col-sm-8">
+    <%= f.submit "　　新規登録　　", class: "btn btn-success" %>
+  </div>
+  </div>
+<% end %>
   
   <%= render "customers/shared/links" %>
 </div>
+
