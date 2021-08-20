@@ -70,9 +70,9 @@
          </div>
          <div class="col-md-4 d-flex align-items-end ">
             <div class="ml-5">
-               <p>商品合計　　　<%= @total += ((total_price*1.1).floor * quantity) %>
+               <p>商品合計　　　<%= @order.total_price %>円 %></p>
                <p>送料　　　　　<%= @order.shipment_charge %>円</p>
-               <p>請求金額合計　<%= @order.total_price.to_s(:delimited) %>円</p>
+               <p>請求金額合計　<%= (@order.total_price+@order.shipment_charge) %>円</p>
             </div>
          </div>
       </div>
