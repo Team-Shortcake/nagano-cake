@@ -55,11 +55,11 @@
                    <tr>
                       <td><%= order_detail.item.name %></td>
                       <td><%= order_detail.item_with_tax.to_s(:delimited) %></td>
-                      <td><%= order_item.quantity %></td>
-                      <td><%= order_item.subtotal.to_s(:delimited) %></td>
+                      <td><%= order_detail.quantity %></td>
+                      <td><%= order_detail.subtotal.to_s(:delimited) %></td>
                       <td>
-                         <%= form_with model: order_detail, url: admin_order_detail(order_detail.id), method: :patch,  local: true do | f | %>
-                         <%= f.select :production_status, options_for_select_from_enum(OrderDetail, :production_status) %>
+                         <%= form_with model: order_detail, url: admin_order_detail_path(order_detail.id), method: :patch,  local: true do | f | %>
+                         <%= f.select :order_status, options_for_select_from_enum(Order, :order_status) %> <%= f.select :order_status, Order.order_statuses, class:"form-control form-control-sm col-6" %>
                          <%= f.submit '更新',class: 'btn btn-success' %>
                          <% end %>
                       </td>
@@ -72,7 +72,7 @@
             <div class="ml-5">
                <p>商品合計　　　<%= @order.total_price %>円 %></p>
                <p>送料　　　　　<%= @order.shipment_charge %>円</p>
-               <p>請求金額合計　<%= (@order.total_price+@order.shipment_charge) %>円</p>
+               <p>請求金額合計　<% @total += (order_detail.item_with_tax*order_detail.quantity) %>円</p>
             </div>
          </div>
       </div>
