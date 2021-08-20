@@ -1,4 +1,5 @@
 class Public::CustomersController < ApplicationController
+  before_action :authenticate_customer!
 
   def show
     @customer = Customer.find(params[:id])
@@ -16,27 +17,21 @@ class Public::CustomersController < ApplicationController
       render "edit"
     end
   end
-  
+
   def quit_confirmation
   end
-  
+
   def quit
     @customer = current_customer
     @customer.update(is_user_status: true)
     reset_session
     redirect_to root_path
   end
-  
+
   #   def unsubscribe
   #   @user = User.find_by(name: params[:name])
   # end
 
-  # def withdraw
-  #   @user = User.find_by(name: params[:name])
-  #   @user.update(is_valid: false)
-  #   reset_session
-  #   redirect_to root_path
-  # end
   private
 
   def customer_params

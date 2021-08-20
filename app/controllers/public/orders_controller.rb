@@ -59,8 +59,8 @@ class Public::OrdersController < ApplicationController
       @address.customer_id = current_customer.id #newページで新しいお届け先に入力したmember_idを取得代入
       if @address.save #保存
       @order.postal_code = @address.postal_code #上記で代入された郵便番号をorderに代入
-      @order.name = @address.delivery_name #上記で代入された宛名をorderに代入
-      @order.address = @address.delivery_address #上記で代入された住所をorderに代入
+      @order.delivery_name = @address.name #上記で代入された宛名をorderに代入
+      @order.deaddress = @address.address #上記で代入された住所をorderに代入
       else
        render 'new'
       end
@@ -84,7 +84,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def order_params
-    params.permit(:payment, :delivery_address, :shipment_charge, :postal_code, :delivery_name, :total_price)
+    params.require(:order).permit(:payment, :delivery_address, :shipment_charge, :postal_code, :delivery_name, :total_price)
   end
 
   def address_params
