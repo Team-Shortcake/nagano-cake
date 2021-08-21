@@ -155,3 +155,9 @@ super && (self.is_deleted == false)で、userのis_deletedがfalseならtrueを�
 # ・他と被っていない：uniqueness: true
 # ・正規表現：format: { with: /<正規表現>/}
 # ・「<属性名>_confirmation」と一致：confirmation: true
+
+
+<label class="ECM_RadioInput"><input class="ECM_RadioInput-Input" type="radio" name="radio"><span class="ECM_RadioInput-DummyInput"></span><span class="ECM_RadioInput-LabelText">YES</span></label>
+<label class="ECM_RadioInput"><input class="ECM_RadioInput-Input" type="radio" name="radio"><span class="ECM_RadioInput-DummyInput"></span><span class="ECM_RadioInput-LabelText">NO</span></label>
+
+CSSは８３から１３１
