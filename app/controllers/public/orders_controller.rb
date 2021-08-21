@@ -55,7 +55,7 @@ class Public::OrdersController < ApplicationController
       @address.address = params[:order][:address] #newページで新しいお届け先に入力した住所を取得代入
       @address.name = params[:order][:name] #newページで新しいお届け先に入力した宛名を取得代入
       @address.postal_code = params[:order][:postal_code] #newページで新しいお届け先に入力した郵便番号を取得代入
-      @address.customer_id = current_customer.id #newページで新しいお届け先に入力したmember_idを取得代入
+      @address.customer_id = current_customer.id #newページで新しいお届け先に入力したcustomer_idを取得代入
       if @address.save! #保存
       @order.postal_code = @address.postal_code #上記で代入された郵便番号をorderに代入
       @order.delivery_name = @address.name #上記で代入された宛名をorderに代入
