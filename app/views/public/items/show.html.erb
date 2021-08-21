@@ -9,7 +9,7 @@
           <%= attachment_image_tag @item, :image, size: "300x300", fallback: "no_image.jpg" %>
         </div>
   	  	<div style="width:400px; height:300px; float:left;">
-  	  	  <h3 style="color: white;"><%= @item.name %></h3><br>
+  	  	  <h3><%= @item.name %></h3><br>
   	  	  <p><%= @item.explanation %></p>
   	  	  <p class="price">¥<%= (@item.price*1.1).floor %><span style="font-size:12px;">（税込）</span></p>
   	  	</div>
