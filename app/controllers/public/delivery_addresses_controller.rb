@@ -1,4 +1,4 @@
-class Public::AddressesController < ApplicationController
+class Public::DeliveryAddressesController < ApplicationController
   before_action :authenticate_customer!
 
 
