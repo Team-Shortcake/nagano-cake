@@ -13,7 +13,7 @@
       </div>
     <% end %>
 
-    <span>　会員情報編集　</span>
+    <h3></h3><span>　会員情報編集　</span>
     <%= form_with model: @customer, url: admin_customer_path(@customer), local: true do |f| %>
       <table cellpadding="10">
          <colgroup>
@@ -30,8 +30,8 @@
         </tr>
         <tr>
           <td>氏名</td>
-          <td><%= f.text_field :last_name %></t>
-          <td><%= f.text_field :first_name %></td>
+          <td><%= f.text_field :last_name_kanji %></t>
+          <td><%= f.text_field :first_name_kanji %></td>
           <td></td>
         </tr>
         <tr>
@@ -52,7 +52,7 @@
         </tr>
         <tr>
           <td>電話番号</td>
-          <td><%= f.text_field :phone_number %></td>
+          <td><%= f.text_field :telephone_number %></td>
           <td></td>
           <td></td>
         </tr>
