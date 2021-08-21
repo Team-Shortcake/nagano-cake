@@ -79,4 +79,15 @@
   background-image: url(image3.jpg);
 }
 // --------------------
+.main-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.flex-container {
+	display: flex;
+	flex-direction: row;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
