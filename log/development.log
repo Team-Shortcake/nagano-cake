@@ -3616,3 +3616,45 @@ Completed 422 Unprocessable Entity in 13ms (ActiveRecord: 0.3ms)
 ActiveRecord::RecordInvalid (バリデーションに失敗しました: Nameを入力してください, Addressを入力してください):
   
 app/controllers/public/orders_controller.rb:59:in `confirm'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveOrderStatusFromOrders (20210821044851)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210821044851_remove_order_status_from_orders.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aorders" ("id" integer NOT NULL PRIMARY KEY, "payment" integer DEFAULT NULL, "shipment_charge" integer DEFAULT NULL, "postal_code" varchar DEFAULT NULL, "delivery_address" varchar DEFAULT NULL, "delivery_name" varchar DEFAULT NULL, "total_price" integer DEFAULT NULL, "order_status" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "customer_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20210821044851_remove_order_status_from_orders.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aorders" ("id","payment","shipment_charge","postal_code","delivery_address","delivery_name","total_price","order_status","created_at","updated_at","customer_id")
+                     SELECT "id","payment","shipment_charge","postal_code","delivery_address","delivery_name","total_price","order_status","created_at","updated_at","customer_id" FROM "orders"[0m
+  ↳ db/migrate/20210821044851_remove_order_status_from_orders.rb:3
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE "orders"[0m
+  ↳ db/migrate/20210821044851_remove_order_status_from_orders.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer NOT NULL PRIMARY KEY, "payment" integer DEFAULT NULL, "shipment_charge" integer DEFAULT NULL, "postal_code" varchar DEFAULT NULL, "delivery_address" varchar DEFAULT NULL, "delivery_name" varchar DEFAULT NULL, "total_price" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "customer_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20210821044851_remove_order_status_from_orders.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "orders" ("id","payment","shipment_charge","postal_code","delivery_address","delivery_name","total_price","created_at","updated_at","customer_id")
+                     SELECT "id","payment","shipment_charge","postal_code","delivery_address","delivery_name","total_price","created_at","updated_at","customer_id" FROM "aorders"[0m
+  ↳ db/migrate/20210821044851_remove_order_status_from_orders.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aorders"[0m
+  ↳ db/migrate/20210821044851_remove_order_status_from_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210821044851"]]
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddOrderStatusToOrders (20210821045409)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "orders" ADD "order_status" integer DEFAULT 0[0m
+  ↳ db/migrate/20210821045409_add_order_status_to_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210821045409"]]
+  ↳ bin/rails:9
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
