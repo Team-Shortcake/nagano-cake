@@ -53,8 +53,8 @@ class Public::OrdersController < ApplicationController
 
     elsif params[:order][:address_number] ==  "3" #address_numberが　”3”　なら下記　新しいお届け先が選ばれたら
       @address = DeliveryAddress.new() #変数の初期化
-      @address.delivery_address = params[:order][:address] #newページで新しいお届け先に入力した住所を取得代入
-      @address.delivery_name = params[:order][:name] #newページで新しいお届け先に入力した宛名を取得代入
+      @address.address = params[:order][:address] #newページで新しいお届け先に入力した住所を取得代入
+      @address.name = params[:order][:name] #newページで新しいお届け先に入力した宛名を取得代入
       @address.postal_code = params[:order][:postal_code] #newページで新しいお届け先に入力した郵便番号を取得代入
       @address.customer_id = current_customer.id #newページで新しいお届け先に入力したmember_idを取得代入
       if @address.save #保存
