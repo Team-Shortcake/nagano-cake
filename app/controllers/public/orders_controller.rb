@@ -10,7 +10,6 @@ class Public::OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @order_details = @order.order_details
-
     @total = 0 #変数提議　合計を計算する変数
   end
 
@@ -38,7 +37,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def confirm
-    params[:order][:payment] = params[:order][:payment].to_i #payment_methodの数値に変換
+    params[:order][:payment] = params[:order][:payment].to_i #paymentの数値に変換
     @order = Order.new(order_params) #情報を渡している
   #分岐
     if params[:order][:address_number] == "1" #address_numberが　”1”　なら下記　ご自身の住所が選ばれたら
@@ -53,11 +52,11 @@ class Public::OrdersController < ApplicationController
 
     elsif params[:order][:address_number] ==  "3" #address_numberが　”3”　なら下記　新しいお届け先が選ばれたら
       @address = DeliveryAddress.new() #変数の初期化
-      @address.delivery_address = params[:order][:address] #newページで新しいお届け先に入力した住所を取得代入
-      @address.delivery_name = params[:order][:name] #newページで新しいお届け先に入力した宛名を取得代入
+      @address.address = params[:order][:address] #newページで新しいお届け先に入力した住所を取得代入
+      @address.name = params[:order][:name] #newページで新しいお届け先に入力した宛名を取得代入
       @address.postal_code = params[:order][:postal_code] #newページで新しいお届け先に入力した郵便番号を取得代入
       @address.customer_id = current_customer.id #newページで新しいお届け先に入力したmember_idを取得代入
-      if @address.save #保存
+      if @address.save! #保存
       @order.postal_code = @address.postal_code #上記で代入された郵便番号をorderに代入
       @order.delivery_name = @address.name #上記で代入された宛名をorderに代入
       @order.delivery_address = @address.address #上記で代入された住所をorderに代入
@@ -88,7 +87,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def address_params
-    params.permit(:delivery_address, :delivery_name, :postal_code, :customer_id)
+    params.permit(:address, :name, :postal_code, :customer_id)
   end
 
 end
