@@ -1,8 +1,8 @@
 <div class='container'>
   <div class='row'>
     <div class='col-md-12 col-lg-12 px-sm-0, content'>
-    <h3><span class="bg-light"><%= @customer.last_name_kanji %><%= @customer.first_name_kanji %>さんの会員詳細</span></h3>
-    <table cellpadding="10">
+    <h3><span class="bg-light"><%= @customer.first_name_kanji %><%= @customer.last_name_kanji %>さんの会員詳細</span></h3>
+    <table table class="table bg-light", cellpadding="10">
 
       <colgroup>
         <col style="width: 25%;">
@@ -17,11 +17,11 @@
       <tr>
         <td>氏名</td>
 
-        <td colspan="3"><%= @customer.last_name_kanji %><%= @customer.first_name_kanji %></td>
+        <td colspan="3"><%= @customer.first_name_kanji %><%= @customer.last_name_kanji %></td>
       </tr>
       <tr>
         <td>フリガナ</td>
-        <td colspan="3"><%= @customer.last_name_kana %><%= @customer.first_name_kana %></td>
+        <td colspan="3"><%= @customer.first_name_kana %><%= @customer.last_name_kana %></td>
       </tr>
       <tr>
         <td>郵便番号</td>

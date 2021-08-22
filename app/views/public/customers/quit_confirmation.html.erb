@@ -8,11 +8,21 @@
      		これまでの購入履歴が閲覧できなくなります。<br>
      	退会する場合は、「退会する」をクリックしてください。</p><br>
 
-       <div class="row mx-auto" style="width: 300px">
-         <%= link_to "退会しない",customer_path(current_customer),class: "btn btn-primary" %>
-       </div>
+      <div class="row mx-auto" style="width: 300px">
+         <div class="col">
+           <%= link_to "退会しない",customer_path(current_customer),class: "btn btn-primary" %>
+         </div>
+         <div class="col">
          <%= link_to "退会する", customers_quit_path(current_customer), method: :patch, "data-confirm" => "本当に退会しますか？", class: "btn btn-danger" %>
-       </div>
+         </div>
+      </div>
+      
      </div>
    </div>
  </div>
+ <style>
+   .withdraw {
+     margin-top: 20px;
+     margin-bottom: 30px;
+   }
+ </style>
