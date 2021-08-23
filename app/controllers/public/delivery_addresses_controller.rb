@@ -3,34 +3,34 @@ class Public::DeliveryAddressesController < ApplicationController
 
 
   def index
-    @deliveryes = DeliveryAddress.all
+    @delivery_addresses = current_customer.delivery_addresses
     @delivery_address = DeliveryAddress.new
   end
 
   def edit
-    @address = DeliveryAddress.find(params[:id])
+    @delivery_address = DeliveryAddress.find(params[:id])
   end
 
   def create
     @delivery_address = DeliveryAddress.new(delivery_address_params)
     @delivery_address.customer_id = current_customer.id
-    @delivery_address.save!
-      redirect_back(fallback_location: root_path)
+    @delivery_address.save
+      redirect_to delivery_addresses_path
   end
 
   def update
-    @address = DeliveryAddress.find(params[:id])
-    @address.customer_id = current_customer.id
-    if @address.update(delivery_address_params)
-      redirect_to addresses_path
+    @delivery_address = DeliveryAddress.find(params[:id])
+    @delivery_address.customer_id = current_customer.id
+    if @delivery_address.update(delivery_address_params)
+      redirect_to delivery_addresses_path
     else
       render "edit"
     end
   end
 
   def destroy
-    @deliveryes = DeliveryAddress.find(params[:id])
-    @deliveryes.destroy
+    @delivery_address = DeliveryAddress.find(params[:id])
+    @delivery_address.destroy
     redirect_back(fallback_location: root_path)
   end
 
