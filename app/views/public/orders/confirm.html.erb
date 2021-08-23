@@ -1,67 +1,87 @@
 <div class="container">
-  <h2>注文情報確認</h2>
+  <h3>注文情報確認</h3>
   <%= form_with(model: @order, local: true) do |f| %>
   <!-- テーブル -->
-  <div class="row">
-    <div class="col-xs-6">
-      <table align="left" class="table table-bordered">
-        <tr>
-          <th>商品名</th>
-          <th>単価(税込)</th>
-          <th>数量</th>
-          <th>小計</th>
-        </tr>
+
+  <div class="row width=”100″">
+    <div class="col">
+      <table align="left" class="table border border" cellspacing="10">
+        <thead>
+          <tr>
+            <th>商品名</th>
+            <th>単価(税込)</th>
+            <th>数量</th>
+            <th>小計</th>
+          </tr>
+        </thead>
+
         <tbody>
-      
         <% @cart_items.each do |cart_item| %>
         <% @total+= (cart_item.item.price*1.1*cart_item.quantity).floor %>
-      
           <tr>
-            <td><%= cart_item.item.name %></td>
-            <td><%= (cart_item.item.price*1.1).floor %></td>
+            <td><%= attachment_image_tag cart_item.item, :image, format: 'jpeg', fallback: "no_image.jpg",size:"50x50" %>
+              <%= cart_item.item.name %></td>
+            <td><%= (cart_item.item.price*1.1).floor.to_s(:delimited) %></td>
             <td><%= cart_item.quantity %></td>
-            <td><%= (cart_item.item.price*1.1*cart_item.quantity).floor %></td>
+            <td><%= (cart_item.item.price*1.1*cart_item.quantity).floor.to_s(:delimited) %></td>
           </tr>
         <% end %>
         </tbody>
       </table>
     </div>
-    
-    <div class="row">
-      <div class="col-xs-4">
-        <table class="table table-bordered">
-          <tr>
-            <th>送料</th>
-            <th>800</th>
-          </tr>
+
+
+    <!--<div class="row">-->
+      <div class="col">
+        <table align="right" class="table border border">
           <tbody>
             <tr>
-							<th>商品合計</th>
-							<td><%= @total %></td>
-						</tr>
-            <tr>
-              <th>請求額</th>
-              <td><%= @total+800 %></td>
+              <th>送料</th>
+              <td>800</td>
             </tr>
+
+              <tr>
+  							<th>商品合計</th>
+  							<td><%= @total.to_s(:delimited) %></td>
+  						</tr>
+              <tr>
+                <th>請求額</th>
+                <td><%= (@total+800).to_s(:delimited) %></td>
+              </tr>
           </tbody>
         </table>
       </div>
     </div>
-  </div><br>
-  
+  <!--</div><br>-->
+
   <!-- テーブル end -->
-  <p><strong>支払方法</strong><%= @order.payment %></p><br>
-  <p><strong>お届け先</strong>〒<%= @order.postal_code %> <%= @order.delivery_address %> <%= @order.delivery_name %></p><br>
+  <p><strong>支払方法</strong>&nbsp;&nbsp;&nbsp;<%= @order.payment %></p><br>
+  <p><strong>お届け先</strong>&nbsp;&nbsp;&nbsp;〒<%= @order.postal_code %> <%= @order.delivery_address %><br><%= @order.delivery_name %></p><br>
   <%= f.hidden_field :payment ,:value => @order.payment %>
 	<%= f.hidden_field :shipment_charge ,:value => 800 %>
 	<%= f.hidden_field :delivery_address,:value => @order.delivery_address %>
 	<%= f.hidden_field :postal_code,:value => @order.postal_code %>
 	<%= f.hidden_field :delivery_name,:value => @order.delivery_name %>
 	<%= f.hidden_field :total_price ,:value => @total %><br><br>
-	
-	<div class="text-center">
+
+	<div class="text-center confirm">
 	  <%= f.submit "購入を確定する", class: "btn btn-success text-center btn-lg" %>
 	</div>
 	<% end %>
-	
+
 </div>
+
+
+
+
+<style>
+
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .confirm {
+    margin-bottom: 50px;
+  }
+</style>
