@@ -12,24 +12,25 @@
                 </ul>
             </div>
           <% end %>
-          
+
    <h3 class="head-line title_h2 text-center">会員情報編集</h3>
    <%= form_with model: @customer, url: customer_path, local: true, method: :PATCH do |f| %>
-      <table cellpadding="10">
+      <table cellpadding="5" cellspacing="5" class="table">
            <colgroup>
              <col style="width: 25%;">
              <col style="width: 25%;">
              <col style="width: 25%;">
              <col style="width: 25%;">
            </colgroup>
-           <tr>
-              <td>氏名</td>
-              <td><%= f.text_field :first_name_kanji, class:"rounded-pill border text-center" %></td>
-              <td><%= f.text_field :last_name_kanji, class:"rounded-pill border text-center" %></td>
-              <td></td>
-           </tr>
-            <tr>
-            
+           <!--<div class="tr">-->
+               <tr>
+                  <td>氏名</td>
+                  <td><%= f.text_field :first_name_kanji, class:"rounded-pill border text-center" %></td>
+                  <td><%= f.text_field :last_name_kanji, class:"rounded-pill border text-center" %></td>
+                  <td></td>
+               </tr>
+            <!--</div>-->
+
             <tr>
                <td>フリガナ</td>
                <td><%= f.text_field :first_name_kana, class:"rounded-pill border text-center" %></td>
@@ -41,7 +42,7 @@
                <td><%= f.text_field :postal_code, class:"rounded-pill border text-center" %></td>
                <td></td>
                <td></td>
-            </tr> 
+            </tr>
             <tr>
                <td>住所</td>
                <td colspan="3"><%= f.text_field :address, :size=>"80", class:"rounded-pill border text-center" %></td>
@@ -58,13 +59,13 @@
                <td></td>
                <td></td>
             </tr>
-     
+
             <tr>
                <td></td>
                <td><div class="editbtn"><%= f.submit "編集内容を保存", class:"btn btn-outline-primary" %></div></td>
                <td></td>
-               <td><div class="editbtn"><%= link_to '退会する', customers_quit_confirmation_path(@customer), class:"btn btn-outline-danger" %></div></td>
-            </tr>  
+               <td><div class="editbtn"><%= link_to '退会する', customers_quit_confirmation_path(@customer), class:"btn btn-outline-danger"%></div></td>
+            </tr>
          </table>
        <% end %>
    </div>
@@ -76,8 +77,12 @@
       margin-top: 20px;
       margin-bottom: 40px;
    }
-   
+
    .editbtn {
       margin-top: 30px;
    }
+
+ .table {
+    border-collapse: separate;
+ }
 </style>
