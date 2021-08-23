@@ -38,7 +38,7 @@
                <td><%= delivery.name %></td>
                <td>
                  <%= link_to "編集する", edit_delivery_address_path(delivery), class: "btn btn-primary" %>
-                 <%= link_to "削除する", delivery_addresses_path(delivery), method: :DELETE, class: "btn btn-danger" %>
+                 <%= link_to "削除する", delivery_address_path(delivery), method: :DELETE, class: "btn btn-danger" %>
                </td>
            </tr>
        <% end %>

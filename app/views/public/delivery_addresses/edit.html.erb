@@ -1,6 +1,6 @@
 <div class="container">
    <h1>配送先編集</h1>
-   <%= form_with model: @address, url: address_path, local: true do |f| %>
+   <%= form_with model: @address, url: delivery_address_path, local: true do |f| %>
      <div class="field">
        <%= f.label :"郵便番号(ハイフンナシ)" %><br>
        <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "0000000" %>

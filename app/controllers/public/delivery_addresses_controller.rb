@@ -3,7 +3,7 @@ class Public::DeliveryAddressesController < ApplicationController
 
 
   def index
-    @deliveryes = DeliveryAddress.all
+    @deliveryes = current_customer.delivery_addresses
     @delivery_address = DeliveryAddress.new
   end
 
@@ -22,7 +22,7 @@ class Public::DeliveryAddressesController < ApplicationController
     @address = DeliveryAddress.find(params[:id])
     @address.customer_id = current_customer.id
     if @address.update(delivery_address_params)
-      redirect_to addresses_path
+      redirect_to delivery_addresses_path
     else
       render "edit"
     end
