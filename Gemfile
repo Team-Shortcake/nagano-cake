@@ -63,10 +63,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise"
 gem 'bootstrap', '~> 4.5'
-gem "jquery-rails"
+
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem "kaminari"
 gem "pry-byebug"
 
 gem 'jp_prefecture' # 都道府県コードから都道府県名を変換するgem
+gem "jquery-rails"

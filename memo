@@ -157,7 +157,24 @@ super && (self.is_deleted == false)で、userのis_deletedがfalseならtrueを�
 # ・「<属性名>_confirmation」と一致：confirmation: true
 
 
-<label class="ECM_RadioInput"><input class="ECM_RadioInput-Input" type="radio" name="radio"><span class="ECM_RadioInput-DummyInput"></span><span class="ECM_RadioInput-LabelText">YES</span></label>
-<label class="ECM_RadioInput"><input class="ECM_RadioInput-Input" type="radio" name="radio"><span class="ECM_RadioInput-DummyInput"></span><span class="ECM_RadioInput-LabelText">NO</span></label>
 
-CSSは８３から１３１
+
+
+
+<h2>複数画像を中央に注目させて見せる</h2>
+
+<ul class="slider">
+  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_01.jpg" alt=""></li>
+  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_02.jpg" alt=""></li>
+  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_03.jpg" alt=""></li>
+  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_04.jpg" alt=""></li>
+  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_05.jpg" alt=""></li>
+  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/img/img_06.jpg" alt=""></li>
+<!--/slider--></ul>
+<p>使用したライブラリ：<a href="https://kenwheeler.github.io/slick/" target="_blank">https://kenwheeler.github.io/slick/</a></p>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/js/6-1-7.js"></script>
+
+</body>

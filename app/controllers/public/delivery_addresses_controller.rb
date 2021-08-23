@@ -3,6 +3,7 @@ class Public::DeliveryAddressesController < ApplicationController
 
 
   def index
+
     @delivery_addresses = current_customer.delivery_addresses
     @delivery_address = DeliveryAddress.new
   end
@@ -19,6 +20,7 @@ class Public::DeliveryAddressesController < ApplicationController
   end
 
   def update
+
     @delivery_address = DeliveryAddress.find(params[:id])
     @delivery_address.customer_id = current_customer.id
     if @delivery_address.update(delivery_address_params)
