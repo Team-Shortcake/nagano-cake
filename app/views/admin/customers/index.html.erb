@@ -17,7 +17,7 @@
         <tr>
           <th scope="row"><%= customer.id %></th>
           <td>
-            <%= link_to (customer.last_name_kanji + customer.first_name_kanji), admin_customer_path(customer), class: "customer_#{customer.id}" %>
+            <%= link_to (customer.first_name_kanji + customer.last_name_kanji), admin_customer_path(customer), class: "customer_#{customer.id}" %>
           </td>
           <td><%= customer.email %></td>
           <td>

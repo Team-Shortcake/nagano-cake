@@ -13,7 +13,7 @@
       </div>
     <% end %>
 
-    <h3></h3><span>　会員情報編集　</span>
+    <h3><span>　会員情報編集　</span> </h3>
     <%= form_with model: @customer, url: admin_customer_path(@customer), local: true do |f| %>
       <table cellpadding="10">
          <colgroup>
@@ -30,8 +30,9 @@
         </tr>
         <tr>
           <td>氏名</td>
-          <td><%= f.text_field :last_name_kanji %></t>
           <td><%= f.text_field :first_name_kanji %></td>
+          <td><%= f.text_field :last_name_kanji %></t>
+          
           <td></td>
         </tr>
         <tr>
@@ -84,3 +85,11 @@
     </div>
   </div>
 </div>
+
+
+<style>
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+</style>

@@ -1,5 +1,5 @@
 <div class="container">
-   <div class="row col-12 justify-content-md-center">
+   <div class="row col-md-12 mx-auto">
        <table class="table item-index">
           <h3>商品一覧</h3>
           <thead>
@@ -19,9 +19,9 @@
                   <td><%= item.price.to_s(:delimited) %></td>
                   <td><%= item.genre.name%></td>
                   <td><% if item.is_order_status == true %>
-                       <div style="color: green;"><%= '販売中' %></div>
+                       <strong style="color: green;"><%= '販売中' %></strong>
                       <% else %>
-                       <div style="color: #CCCCCC"><%= '販売停止中' %></div>
+                       <strong style="color: #CCCCCC"><%= '販売停止中' %></strong>
                      <% end %>
                   </td>
                 </tr>
