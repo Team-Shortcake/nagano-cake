@@ -1,4 +1,5 @@
 <div class="container">
+
    <div class='row align-items-center'>
       <h2 class="head-line title_h2 text-center">登録情報編集</h2>
    </div>
@@ -80,3 +81,92 @@
         <!--退会ボタン-->
    </div>
  </div>
+=======
+   <div class='row'>
+      <div class='col-md-12 col-lg-12 px-sm-0, content'>
+
+          <% if @customer.errors.any? %>
+            <div id="error explanation">
+              <h3 style="color: red;"><%= @customer.errors.count %> error prohibited this obj from being saved:</h3>
+                <ul style="color: red;">
+                  <% @customer.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+            </div>
+          <% end %>
+
+   <h3 class="head-line title_h2 text-center">会員情報編集</h3>
+   <%= form_with model: @customer, url: customer_path, local: true, method: :PATCH do |f| %>
+      <table cellpadding="5" cellspacing="5" class="table">
+           <colgroup>
+             <col style="width: 25%;">
+             <col style="width: 25%;">
+             <col style="width: 25%;">
+             <col style="width: 25%;">
+           </colgroup>
+           <!--<div class="tr">-->
+               <tr>
+                  <td>氏名</td>
+                  <td><%= f.text_field :first_name_kanji, class:"rounded-pill border text-center" %></td>
+                  <td><%= f.text_field :last_name_kanji, class:"rounded-pill border text-center" %></td>
+                  <td></td>
+               </tr>
+            <!--</div>-->
+
+            <tr>
+               <td>フリガナ</td>
+               <td><%= f.text_field :first_name_kana, class:"rounded-pill border text-center" %></td>
+               <td><%= f.text_field :last_name_kana, class:"rounded-pill border text-center" %></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>郵便番号</td>
+               <td><%= f.text_field :postal_code, class:"rounded-pill border text-center" %></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>住所</td>
+               <td colspan="3"><%= f.text_field :address, :size=>"80", class:"rounded-pill border text-center" %></td>
+            </tr>
+            <tr>
+               <td>電話番号</td>
+               <td><%= f.text_field :telephone_number, class:"rounded-pill border text-center" %></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>メールアドレス</td>
+               <td><%= f.text_field :email, class:"rounded-pill border text-center" %></td>
+               <td></td>
+               <td></td>
+            </tr>
+
+            <tr>
+               <td></td>
+               <td><div class="editbtn"><%= f.submit "編集内容を保存", class:"btn btn-outline-primary" %></div></td>
+               <td></td>
+               <td><div class="editbtn"><%= link_to '退会する', customers_quit_confirmation_path(@customer), class:"btn btn-outline-danger"%></div></td>
+            </tr>
+         </table>
+       <% end %>
+   </div>
+  </div>
+</div>
+
+<style>
+   h3 {
+      margin-top: 20px;
+      margin-bottom: 40px;
+   }
+
+   .editbtn {
+      margin-top: 30px;
+   }
+
+ .table {
+    border-collapse: separate;
+ }
+</style>
+
