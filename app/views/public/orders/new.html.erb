@@ -21,7 +21,7 @@
         <!-- my住所  -->
         <label style="margin-left: 60px;"><%= f.radio_button :address_number, 1,checked: "checked" %> ご自身の住所</label>
         <div style="margin-left: 70px"><%= current_customer.postal_code %> <%= current_customer.address %>
-        <%= current_customer.last_name_kanji %><%= current_customer.first_name_kanji %></div>
+        <%= current_customer.first_name_kanji %><%= current_customer.last_name_kanji %></div>
         </div>
 
         <!-- 登録済住所 -->
