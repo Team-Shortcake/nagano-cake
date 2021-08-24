@@ -43,7 +43,7 @@ class Public::OrdersController < ApplicationController
     if params[:order][:address_number] == "1" #address_numberが　”1”　なら下記　ご自身の住所が選ばれたら
       @order.postal_code = current_customer.postal_code #自身の郵便番号をorderの郵便番号に入れる
       @order.delivery_address = current_customer.address #自身の住所をorderの住所に入れる
-      @order.delivery_name = current_customer.last_name_kanji+current_customer.first_name_kanji #自身の宛名をorderの宛名に入れる
+      @order.delivery_name = current_customer.first_name_kanji+current_customer.last_name_kanji #自身の宛名をorderの宛名に入れる
 
     elsif  params[:order][:address_number] ==  "2" #address_numberが　”2”　なら下記　登録済からの選択が選ばれたら
       @order.postal_code = DeliveryAddress.find(params[:order][:address]).postal_code #newページで選ばれた配送先住所idから特定して郵便番号の取得代入
