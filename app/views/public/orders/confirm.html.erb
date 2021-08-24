@@ -55,7 +55,7 @@
   <!--</div><br>-->
 
   <!-- テーブル end -->
-  <p><strong>支払方法</strong>&nbsp;&nbsp;&nbsp;<%= @order.payment %></p><br>
+  <p class="payment"><strong>支払方法</strong>&nbsp;&nbsp;&nbsp;<%= @order.payment %></p>
   <p><strong>お届け先</strong>&nbsp;&nbsp;&nbsp;〒<%= @order.postal_code %> <%= @order.delivery_address %><br><%= @order.delivery_name %></p><br>
   <%= f.hidden_field :payment ,:value => @order.payment %>
 	<%= f.hidden_field :shipment_charge ,:value => 800 %>
@@ -83,5 +83,9 @@
   }
   .confirm {
     margin-bottom: 50px;
+  }
+  
+  .payment {
+    margin-top: 20px;
   }
 </style>
