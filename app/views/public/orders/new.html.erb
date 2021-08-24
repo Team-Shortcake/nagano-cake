@@ -1,5 +1,4 @@
 <div class="container">
- 
     <div class="col-md-6 mx-auto">
       <h2><i class="fas fa-pen"></i>注文情報入力</h2>
       <p><%= notice %></p>
@@ -21,13 +20,13 @@
         <!-- my住所  -->
         <label style="margin-left: 60px;"><%= f.radio_button :address_number, 1,checked: "checked" %> ご自身の住所</label>
         <div style="margin-left: 70px"><%= current_customer.postal_code %> <%= current_customer.address %>
-        <%= current_customer.last_name_kanji %><%= current_customer.first_name_kanji %></div>
+        <%= current_customer.first_name_kanji %><%= current_customer.last_name_kanji %></div>
         </div>
 
         <!-- 登録済住所 -->
         <div class="address-form" style="margin-top: 25px; padding:0 60px;">
           <label style=""><%= f.radio_button :address_number ,2 %> 登録済住所からの選択</label><br>
-          <div style=" "><%= f.collection_select :address, @current_customer.delivery_addresses.all, :id, :address_all %>
+          <div style=" "><%= f.collection_select :addresses, @current_customer.delivery_addresses.all, :id, :address_all %>
           </div>
         </div>
 
