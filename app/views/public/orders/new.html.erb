@@ -1,5 +1,4 @@
 <div class="container">
- 
     <div class="col-md-6 mx-auto">
       <h2><i class="fas fa-pen"></i>注文情報入力</h2>
       <p><%= notice %></p>
@@ -27,7 +26,7 @@
         <!-- 登録済住所 -->
         <div class="address-form" style="margin-top: 25px; padding:0 60px;">
           <label style=""><%= f.radio_button :address_number ,2 %> 登録済住所からの選択</label><br>
-          <div style=" "><%= f.collection_select :address, @current_customer.delivery_addresses.all, :id, :address_all %>
+          <div style=" "><%= f.collection_select :addresses, @current_customer.delivery_addresses.all, :id, :address_all %>
           </div>
         </div>
 

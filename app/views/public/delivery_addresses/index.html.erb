@@ -5,20 +5,20 @@
        <tr>
          <td>郵便番号(ハイフンなし)</td>
          <td><%= f.text_field :postal_code, placeholder: "0000000" %></td>
-         
+
        </tr>
-       
+
        <tr>
          <td>住所</td>
          <td><%= f.text_field :address, autofocus: true, autocomplete: "address", :size => "40*40", placeholder: "長野県長野市" %></td>
        </tr>
-       
+
        <tr>
          <td>宛名</td>
          <td><%= f.text_field :name, placeholder: "山田　太郎" %></td>
          <td><%= f.submit "新規登録", class:"btn btn-outline-success" %></td>
        </tr>
-    
+
    </table>
    <% end %>
    <table class="table table-bordered">
