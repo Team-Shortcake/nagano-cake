@@ -1,75 +1,69 @@
 <div class="container">
   <div class="row">
-
-
     <div class="col-md-12">
-          <h2><i class="fas fa-shopping-cart"></i>ショッピングカート</h2>
-
+      <h2><i class="fas fa-shopping-cart"></i>ショッピングカート</h2>
         <div style="text-align: right;">
-          <div><%= link_to "カートを空にする", cart_item_destroy_all_path(@cart_items), method: :delete, class:"btn-danger" %></div>
+          <div>
+            <%= link_to "カートを空にする", cart_item_destroy_all_path(@cart_items), method: :delete, class:"btn-danger" %>
+          </div>
         </div>
-
         <h4><%= notice %></h4>
         <table class="table-bordered" style="width: 100%;">
           <thead class="bg-light">
-          <tr>
-            <th id="item-name" style="width: 300px;">商品名</th>
-            <th style="width: 185px;">単価（税込）</th>
-            <th style="width: 185px;">数量</th>
-            <th style="width: 185px;">小計</th>
-            <th style="width: 185px;"></th>
-          </tr>
+            <tr>
+              <th id="item-name" style="width: 300px;">商品名</th>
+              <th style="width: 185px;">単価（税込）</th>
+              <th style="width: 185px;">数量</th>
+              <th style="width: 185px;">小計</th>
+              <th style="width: 185px;"></th>
+            </tr>
           </thead>
           <tbody>
-          <% @cart_items.each do |cart_item| %>
-          <tr>
-            <td>
-              <%= link_to item_path(cart_item.item_id) do %>
-                <%= attachment_image_tag(cart_item.item, :image, fallback: "no_image.jpg", size: "50x50", class: "item-img") %>
-                <%= cart_item.item.name %>
-              <% end %>
-            </td>
-            <td>
-              <%= (cart_item.item.price*1.1).floor %>
-            </td>
-            <td>
-              <%= form_with model:cart_item, local:true do |f| %>
-              <%= f.number_field :quantity, min:1, max: 20 %>  <%= f.submit "変更" ,class:"btn btn-primary btn-sm" %>
-              <% end %>
-            </td>
-            <td>
-              <%= ((cart_item.item.price*1.1).floor*cart_item.quantity) %>
-              <!--each文の小計を@totalに代入 => 代入演算子。コントローラーで@totalに整数利用できるよう初期値0を設定している。-->
-              <% @total += ((cart_item.item.price*1.1).floor*cart_item.quantity) %>
-            </td>
-            <td>
-              <div style="margin-left: 50px;">
-                <%= link_to "削除する", cart_item_path(cart_item), method: :delete, class:"btn btn-danger btn-sm" %>
-              </div>
-            </td>
-          </tr>
-          <% end %>
+            <% @cart_items.each do |cart_item| %>
+              <tr>
+                <td>
+                  <%= link_to item_path(cart_item.item_id) do %>
+                  <%= attachment_image_tag(cart_item.item, :image, fallback: "no_image.jpg", size: "50x50", class: "item-img") %>
+                  <%= cart_item.item.name %>
+                  <% end %>
+                </td>
+                <td>
+                  <%= (cart_item.item.price*1.1).floor %>
+                </td>
+                <td>
+                  <%= form_with model:cart_item, local:true do |f| %>
+                  <%= f.number_field :quantity, min:1, max: 20 %>  <%= f.submit "変更" ,class:"btn btn-primary btn-sm" %>
+                  <% end %>
+                </td>
+                <td>
+                  <%= ((cart_item.item.price*1.1).floor*cart_item.quantity) %>
+                  <!--each文の小計を@totalに代入 => 代入演算子。コントローラーで@totalに整数利用できるよう初期値0を設定している。-->
+                  <% @total += ((cart_item.item.price*1.1).floor*cart_item.quantity) %>
+                </td>
+                <td>
+                  <div style="margin-left: 50px;">
+                    <%= link_to "削除する", cart_item_path(cart_item), method: :delete, class:"btn btn-danger btn-sm" %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
           </tbody>
         </table>
+    </div> <!--col-md-12閉じタグ-->
+    <div class="col-md-5">
+      <div style="margin-top:50px;">
+        <%= link_to "買い物を続ける", root_path, class:"btn btn-primary" %>
+      </div>
     </div>
-
-
-      <div class="col-md-5">
-        <div style="margin-top:50px;"><%= link_to "買い物を続ける", root_path, class:"btn btn-primary" %></div>
+    
+    <div class="col-md-3" style="margin:0 0 0 auto; padding-top: 30px;">
+      <div class="total-price-box" style="text-align:center; border:solid 1px #aaa; padding: 15px;">
+        <span class="total-price" style="margin-right: 5px;">合計金額</span>
+        <span class="border total-price bg-warning" style="padding: 6px;"><%= @total %></span>
       </div>
-
-      <div class="col-md-3" style="margin:0 0 0 auto; padding-top: 30px;">
-          <div class="total-price-box" style="text-align:center; border:solid 1px #aaa; padding: 15px;">
-            <span class="total-price" style="margin-right: 5px;">合計金額</span>
-            <span class="border total-price bg-warning" style="padding: 6px;"><%= @total %></span>
-          </div>
-      </div>
+    </div>
+  </div><!--row閉じタグ-->
+  <div class="col-md-12 cart_continue_to_order" style="text-align: center;">
+    <%= link_to "情報入力に進む", orders_confirm_path, class: "btn btn-success btn-lg" %>
   </div>
-
-    <div class="col-md-12 cart_continue_to_order" style="text-align: center;">
-      <%= link_to "情報入力に進む", orders_confirm_path, class: "btn btn-success btn-lg" %>
-    </div>
 </div>
-
-
-

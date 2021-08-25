@@ -1,32 +1,24 @@
-<!--<div class="container">-->
-<!--  <div class="row">-->
-    <!-- ジャンル検索バー -->
-  <div id="wrapper">
-  	<%= render "public/sidebar/sidebar", genres: @genres %>
+<!-- ジャンル検索バー -->
+<div id="wrapper">
+  <%= render "public/sidebar/sidebar", genres: @genres %>
+</div>
+<div class="col-xs-9">
+  <div class="row" style="margin-top: 50px;">
+    <div style="float: left; margin: 15px 50px;">
+      <%= attachment_image_tag @item, :image, size: "300x300", fallback: "no_image.jpg" %>
+    </div>
+    <div style="width:400px; height:300px; float:left;">
+      <h3><%= @item.name %></h3><br>
+      <p><%= @item.explanation %></p>
+      <p class="price">¥<%= (@item.price*1.1).floor %><span style="font-size:12px;">（税込）</span></p>
+    </div>
   </div>
-  	<div class="col-xs-9">
-  	  <div class="row" style="margin-top: 50px;">
-  	  	<div style="float: left; margin: 15px 50px;">
-          <%= attachment_image_tag @item, :image, size: "300x300", fallback: "no_image.jpg" %>
-        </div>
-  	  	<div style="width:400px; height:300px; float:left;">
-  	  	  <h3><%= @item.name %></h3><br>
-  	  	  <p><%= @item.explanation %></p>
-  	  	  <p class="price">¥<%= (@item.price*1.1).floor %><span style="font-size:12px;">（税込）</span></p>
-  	  	</div>
-  	  </div>
-      <div class="col-xs-5">
-      <strong class="error"><%= notice %></strong>
-<<<<<<< HEAD
-        <%= form_with model:@cart_item, url: cart_items_path(@cart_item), local: :true do |f| %>
-=======
-        <%= form_with model:@cart_item, url: cart_items_path(@cart_item), local:true do |f| %>
->>>>>>> origin/develop
+  <div class="col-xs-5">
+    <strong class="error"><%= notice %></strong>
+      <%= form_with model:@cart_item, url: cart_items_path(@cart_item), local: :true do |f| %>
         <%= f.hidden_field :item_id  , :value => @item.id%>
         <%= f.number_field :quantity , placeholder: "個数選択", min: 1, max: 20 %> 
         <%= f.submit "カートに入れる" ,class: 'btn btn-primary' %>
-        <% end %>
-      </div>
-  	</div>
-<!--  </div>-->
-<!--</div>-->
+      <% end %>
+  </div>
+</div>

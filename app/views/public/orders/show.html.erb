@@ -1,72 +1,68 @@
 <div class="container">
-   <h1>注文履歴詳細</h1>
-   <strong>注文情報</strong>
-
-     <table class="table table-sm table-bordered">
-         <tbody>
-             <tr>
-                 <th class="bg-light d-block d-md-table-cell">注文日</th>
-                 <td class="d-block d-md-table-cell"><%= @order.created_at.strftime('%Y/%m/%d') %></td>
-             </tr>
-             <tr>
-                 <th class="bg-light d-block d-md-table-cell">配送先</th>
-                 <td class="d-block d-md-table-cell">
-                   <%= @order.postal_code %>
-                   <%= @order.delivery_address %>
-                   <%= @order.delivery_name %>
-                 </td>
-             </tr>
-             <tr>
-                 <th class="bg-light d-block d-md-table-cell">支払い方法</th>
-                 <td class="d-block d-md-table-cell"><%= @order.payment %></td>
-             </tr>
-             <tr>
-                 <th class="bg-light d-block d-md-table-cell">ステータス</th>
-                 <td class="d-block d-md-table-cell"><%= @order.order_status %></td>
-             </tr>
-         </tbody>
-     </table>
-     
-     <strong>注文内容</strong>
-     <table class="table table-sm table-bordered">
-       <thead class="thead">
-         <tr>
-           <th scope="col">商品</th>
-           <th scope="col">単価（税込）</th>
-           <th scope="col">個数</th>
-           <th scope="col">小計</th>
-         </tr>
-       </thead>
-       <tbody>
-       <% @order_details.each do |order_detail| %>
-         <tr>
-           <td><%= order_detail.item.name %></td>
-   		   <td><%= order_detail.item_with_tax %></td>
-   		   <td><%= order_detail.quantity %></td>
-   		   <td><%= (order_detail.item_with_tax*order_detail.quantity) %>
-   			   <% @total += (order_detail.item_with_tax*order_detail.quantity) %>
-   		   </td>
-         </tr>
-       <% end %>
-       </tbody>
-     </table>
-     
-     <strong>請求情報</strong>
-     <table class="table table-sm table-bordered">
-         <tbody>
-             <tr>
-                 <th class="bg-light d-block d-md-table-cell">商品合計</th>
-                 <td class="d-block d-md-table-cell"><%= @total %></td>
-             </tr>
-             <tr>
-                 <th class="bg-light d-block d-md-table-cell">送料</th>
-                 <td class="d-block d-md-table-cell">800</td>
-             </tr>
-             <tr>
-                 <th class="bg-light d-block d-md-table-cell"><strong>ご請求金額</strong></th>
-                 <td class="d-block d-md-table-cell"><%= @total + 800 %></td>
-             </tr>
-         </tbody>
-     </table>
-     
-   </div> 
+  <h1>注文履歴詳細</h1>
+  <strong>注文情報</strong>
+  <table class="table table-sm table-bordered">
+    <tbody>
+      <tr>
+        <th class="bg-light d-block d-md-table-cell">注文日</th>
+        <td class="d-block d-md-table-cell"><%= @order.created_at.strftime('%Y/%m/%d') %></td>
+      </tr>
+      <tr>
+        <th class="bg-light d-block d-md-table-cell">配送先</th>
+        <td class="d-block d-md-table-cell">
+          <%= @order.postal_code %>
+          <%= @order.delivery_address %>
+          <%= @order.delivery_name %>
+        </td>
+      </tr>
+      <tr>
+      　<th class="bg-light d-block d-md-table-cell">支払い方法</th>
+        <td class="d-block d-md-table-cell"><%= @order.payment %></td>
+      </tr>
+      <tr>
+        <th class="bg-light d-block d-md-table-cell">ステータス</th>
+        <td class="d-block d-md-table-cell"><%= @order.order_status %></td>
+      </tr>
+    </tbody>
+  </table>
+  <strong>注文内容</strong>
+  <table class="table table-sm table-bordered">
+    <thead class="thead">
+      <tr>
+        <th scope="col">商品</th>
+        <th scope="col">単価（税込）</th>
+        <th scope="col">個数</th>
+        <th scope="col">小計</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order_details.each do |order_detail| %>
+        <tr>
+          <td><%= order_detail.item.name %></td>
+          <td><%= order_detail.item_with_tax %></td>
+          <td><%= order_detail.quantity %></td>
+          <td><%= (order_detail.item_with_tax*order_detail.quantity) %>
+              <% @total += (order_detail.item_with_tax*order_detail.quantity) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <strong>請求情報</strong>
+    <table class="table table-sm table-bordered">
+      <tbody>
+        <tr>
+          <th class="bg-light d-block d-md-table-cell">商品合計</th>
+          <td class="d-block d-md-table-cell"><%= @total %></td>
+        </tr>
+        <tr>
+          <th class="bg-light d-block d-md-table-cell">送料</th>
+          <td class="d-block d-md-table-cell">800</td>
+        </tr>
+        <tr>
+          <th class="bg-light d-block d-md-table-cell"><strong>ご請求金額</strong></th>
+          <td class="d-block d-md-table-cell"><%= @total + 800 %></td>
+        </tr>
+      </tbody>
+    </table>
+</div> 

@@ -1,24 +1,20 @@
 <div class="container">
-   <h1>配送先編集</h1>
-
-   <%= form_with model: @delivery_address, url: delivery_address_path, local:true do |f| %>
-   <table class="table table-borderless">
-       <tr>
-         <td>郵便番号(ハイフンなし)</td>
-         <td><%= f.text_field :postal_code, placeholder: "0000000" %></td>
-         
-       </tr>
-       
-       <tr>
-         <td>住所</td>
-         <td><%= f.text_field :address, autofocus: true, autocomplete: "address", :size => "40*40", placeholder: "長野県長野市" %></td>
-       </tr>
-       
-       <tr>
-         <td>宛名</td>
-         <td><%= f.text_field :name, placeholder: "山田　太郎" %></td>
-         <td><%= f.submit "変更内容を保存", class: "btn btn-success" %></td>
-       </tr>
-    
-   </table>
-   <% end %>
+  <h1>配送先編集</h1>
+    <%= form_with model: @delivery_address, url: delivery_address_path, local:true do |f| %>
+      <table class="table table-borderless">
+        <tr>
+          <td>郵便番号(ハイフンなし)</td>
+          <td><%= f.text_field :postal_code, placeholder: "0000000" %></td>
+        </tr>
+        <tr>
+          <td>住所</td>
+          <td><%= f.text_field :address, autofocus: true, autocomplete: "address", :size => "40*40", placeholder: "長野県長野市" %></td>
+        </tr>
+        <tr>
+          <td>宛名</td>
+          <td><%= f.text_field :name, placeholder: "山田　太郎" %></td>
+          <td><%= f.submit "変更内容を保存", class: "btn btn-success" %></td>
+        </tr>
+      </table>
+    <% end %>
+</div>
