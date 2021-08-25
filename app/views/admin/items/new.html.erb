@@ -1,5 +1,7 @@
+<p class="flash" style="color:#ecf1e9;"><%= flash[:notice] %></p>
 <div class="container">
-  <div class="col-md-9 mx-auto">
+  <div class="col-md">
+
       <h3>商品新規登録</h3>
       <%= form_with model: @item, url: admin_items_path, local: true do |f| %>
         <div class="form-inline row mb-3 text-right">
@@ -32,4 +34,5 @@
            <%= f.submit '新規登録', class:"btn btn-success btn-lg" %>
       <% end %>
   </div>
+
 </div>

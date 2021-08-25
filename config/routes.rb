@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get 'about' => 'homes#about'
 
   namespace :admin do
+    get '/search' => 'searches#search'
     resources :items, only:[:index,:show,:new,:edit,:create,:update]
     resources :genres, only:[:index,:create,:edit,:update]
     resources :customers, only:[:index,:show,:edit,:create,:update]
@@ -30,6 +31,7 @@ Rails.application.routes.draw do
 
 
   scope module: :public do
+    get '/search' => 'searches#search'
 
     resources :items, only:[:index,:show] do
       get :search, on: :collection # ジャンル検索機能用
