@@ -1,7 +1,7 @@
 class Admin::ItemsController < ApplicationController
-  
+
   before_action :authenticate_admin!
-  
+
   def index
     @items = Item.all
   end
@@ -19,7 +19,7 @@ class Admin::ItemsController < ApplicationController
      if @item.save
        redirect_to admin_item_path(@item)
      else
-      flash[:notice] = "商品名を入力してください"
+      flash[:notice] = "空欄箇所を入力してください"
        redirect_to new_admin_item_path
      end
   end
@@ -33,6 +33,7 @@ class Admin::ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to admin_items_path
     else
+      flash[:notice] = "もう一度入力してください"
       redirect_to edit_admin_item_path(@item)
     end
   end

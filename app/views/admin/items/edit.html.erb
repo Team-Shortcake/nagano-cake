@@ -1,35 +1,39 @@
+<p class="flash" style="color:#ecf1e9;"><%= flash[:notice] %></p>
 <div class="container">
-  <div class="col-md-9">
+  <div class="col-md-10 mx-auto">
+
       <h3>商品編集</h3>
+
       <%= form_with model: @item, url: admin_item_path(@item), local: true do |f| %>
-      　<div class="form-inline mb-3">
-      　   <%= f.label :image, "商品画像" %>
-          <%= f.attachment_field :image %>
+
+      　<div style=" margin-right: 10px;">
+      　   <%= f.label :image, "　　　  商品画像" %>
+      　<span style="margin: 67px;"><%= f.attachment_field :image %></span>
      　  </div>
-　　　　<div class="form-inline mb-3">
-　　　　　<%= f.label :name, "商品名" %>
+　　　　<div class="form-inline row ">
+　　　　　<span style="padding-right: 17px;"><%= f.label :name, "　商品名" %></span>
 　　　　　<%= f.text_field :name, placeholder: "商品名", class: "form-control" %>
 　　　　</div>
-　　　  <div class="form-inline mb-3">
-　　　　　<%= f.label :explanation, "商品説明" %>
+　　　  <div class="form-inline row ">
+　　　　　<%= f.label :explanation, "　商品説明" %>
 　　　　　<%= f.text_area :explanation, placeholder: "ここに説明文を記述します", class: "form-control" %>
 　　　　</div>
-　　　　<div class="form-inline mb-3">
-　　　　  <%= f.label :genre_id, "ジャンル" %>
+　　　　<div class="form-inline ">
+　　　　  <%= f.label :genre_id, "　ジャンル" %>
 　　　　　<%= f.collection_select :genre_id, Genre.all, :id, :name, class: "form-control" %>
 　　　　</div>
-　　　　<div class="form-inline mb-3">
-　　　　　<%= f.label :price, "税抜価格" %>
-　　　　　<%= f.text_field :price, placeholder: "1000", class: "form-control" %>円
+　　　　<div class="form-inline ">
+　　　　　<%= f.label :price,"税抜価格" %>
+　　　　　<%= f.text_field :price, placeholder: "1000", class: "form-control" %>
 　　　　</div>
-　　　　<div class="form-inline mb-3">
-　　　　  <%= f.label :is_order_status, "販売ステータス" %>
+　　　　<div class="form-inline">
+　　　　  <%= f.label :is_order_status, "　販売ステータス" %>
 　　　　　<%= f.radio_button :is_order_status, true %>
-　　　　　<%= f.label :is_order_status, '販売中', value: true %>
+　　　　　<span style="margin: -60px;  padding-right: 30px;"><%= f.label :is_order_status, '販売中', value: true %></span>
 　　　　　<%= f.radio_button :is_order_status, false %>
-　　　　　<%= f.label :is_order_status, '販売停止中', value: false %>
+　　　　　<span style="margin: -60px;"><%= f.label :is_order_status, '販売停止中', value: false %></span>
 　　　　</div>
-　　　　　<%= f.submit '変更を保存', class:"btn btn-success btn-lg" %>
+　　　　<div style"margin-top: 10px"><%= f.submit '変更を保存', class:"btn btn-success btn-lg" %></div>
 　　　<% end %>
 　</div>
 </div>
