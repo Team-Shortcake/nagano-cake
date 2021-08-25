@@ -16,7 +16,7 @@
        <tr>
          <td>宛名</td>
          <td><%= f.text_field :name, placeholder: "山田　太郎" %></td>
-         <td><%= f.submit "新規登録", class: "btn btn-success" %></td>
+         <td><%= f.submit "新規登録", class:"btn btn-outline-success" %></td>
        </tr>
     
    </table>
@@ -38,7 +38,7 @@
                <td><%= delivery.name %></td>
                <td>
 
-                 <%= link_to "編集する", edit_delivery_address_path(delivery), class: "btn btn-success" %>
+                 <%= link_to "編集する", edit_delivery_address_path(delivery), class:"btn btn-outline-success" %>
                  <%= link_to "削除する", delivery_address_path(delivery), method: :delete, class: "btn btn-danger" %>
                </td>
            </tr>
