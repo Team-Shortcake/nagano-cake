@@ -4,26 +4,26 @@
          <p class="col-md-2">購入者</p>
          <p class="col-md-10">
             <%= link_to admin_customer_path(@order.customer_id) do %>
-               <%= @order.customer.last_name_kanji %> <%= @order.customer.first_name_kanji %>
+               <%= @order.customer.first_name_kanji %> <%= @order.customer.last_name_kanji %>
             <% end %>
          </p>
       </div>
-         
+
       <div class="row">
          <p class="col-md-2">注文日</p>
          <p class="col-md-10"><%= @order.created_at.to_s(:date_jp) %></p>
       </div>
-        
+
       <div class="row">
          <p class="col-md-2">配送先</p>
          <p class="col-md-10">〒<%= @order.postal_code.to_s %> <%= @order.delivery_address %></p>
       </div>
-        
+
       <div class="row">
          <p class="col-md-2"></p>
          <p class="col-md-10"><%= @order.delivery_name %></p>
       </div>
-      
+
       <div class="row">
          <p class="col-md-2">支払い方法</p>
          <p class="col-md-10"><%= @order.payment %></p>
@@ -32,7 +32,7 @@
       <div class="row">
          <p class="col-md-2">注文ステータス</p>
          <div class="col-md-10">
-            <%= form_with model: @order, url:admin_order_path(@order.id), method: :patch, local: true do | f | %> 
+            <%= form_with model: @order, url:admin_order_path(@order.id), method: :patch, local: true do | f | %>
                <%= f.select :order_status,["支払待ち","支払済み","発送準備中","発送済み"] %>
                <%= f.submit '更新',class: 'btn btn-success' %>
             <% end %>

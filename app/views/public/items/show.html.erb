@@ -24,10 +24,15 @@
         <!--<div class="col-xs-5">-->
         <strong class="error"><%= notice %></strong>
           <div class="cart">
-            <%= form_with model:@cart_item, url: cart_items_path(@cart_item), local:true do |f| %>
-            <%= f.hidden_field :item_id  , :value => @item.id%>
-            <%= f.number_field :quantity , placeholder: "個数選択", min: 1, max: 20, class:"quantity" %>
-            <%= f.submit "カートに入れる" ,class: 'btn btn-outline-primary' %>
+            <% if customer_signed_in? %>
+              <%= form_with model:@cart_item, url: cart_items_path(@cart_item), local:true do |f| %>
+                <%= f.hidden_field :item_id  , :value => @item.id%>
+                <%= f.number_field :quantity , placeholder: "個数選択", min: 1, max: 20, class:"quantity" %>
+                <%= f.submit "カートに入れる" ,class: 'btn btn-outline-primary' %>
+              <% end %>
+            <% else %>
+              <p>ログイン後に購入できるようになります！</p>
+              <%= link_to "ログインの方はこちら", new_customer_session_path %>／<%= link_to "新規会員登録の方はこちら" %>
             <% end %>
           </div>
      <!--   </div>-->
