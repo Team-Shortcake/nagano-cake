@@ -177,4 +177,4 @@ super && (self.is_deleted == false)で、userのis_deletedがfalseならtrueを�
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/js/6-1-7.js"></script>
 
-</body>
+</body>a
