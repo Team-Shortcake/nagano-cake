@@ -23,4 +23,17 @@
               <% end %>
           </table>
     </div>
+    
+    <table class="table genre-index">
+      <h3>ジャンル</h3>
+        <% @genres.each do |genre| %>
+          <thead>
+            <tr>
+              <th><%= genre.name %></th>
+              <th><%= link_to '編集する', edit_admin_genre_path(genre), class:"btn btn-success btn-sm" %></th>
+            </tr>
+          </thead>
+        <% end %>
+    </table>
+  </div>
 </div>
