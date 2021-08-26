@@ -31,7 +31,7 @@
           <div style="display: flex; margin-left: 15%;">
             <div style="display:block;">
               <div><%= f.label :"郵便番号(ハイフンなし)"%></div>
-                <%= f.text_field :postal_code , value: "〒"%><br>
+                <%= f.text_field :postal_code %><br>
               <div><%= f.label :"住所" %></div>
                   <%= f.text_field :address ,size: "60" %><br>
               <div><%= f.label :"宛名" %></div>
@@ -39,7 +39,7 @@
             </div>
           </div>
       </div>
-      <div class="col-md-6 mx-auto" style="margin: 18px; "><%= f.submit "確認画面に進む", class: "btn btn-primary" %></div>
+      <div class="col-md-6 mx-auto" style="margin: 18px; "><%= f.submit "確認画面に進む", class:"btn btn-outline-primary" %></div>
     <% end %>
     </div>
   </div>

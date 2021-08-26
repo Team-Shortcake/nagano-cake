@@ -34,7 +34,7 @@
          <div class="col-md-10">
             <%= form_with model: @order, url:admin_order_path(@order.id), method: :patch, local: true do | f | %>
                <%= f.select :order_status,["支払待ち","支払済み","発送準備中","発送済み"] %>
-               <%= f.submit '更新',class: 'btn btn-success' %>
+               <%= f.submit '更新',class:"btn btn-outline-success" %>
             <% end %>
          </div>
       </div>
@@ -60,7 +60,7 @@
                       <td>
                          <%= form_with model:order_detail, url:admin_order_detail_path(order_detail.id), method: :patch,  local: true do | f | %>
                          <%= f.select :production_status,["制作不可","製作待ち","製作中","製作完了"] %>
-                         <%= f.submit '更新',class: 'btn btn-success' %>
+                         <%= f.submit '更新',class:"btn btn-outline-success" %>
                          <% end %>
                       </td>
                    </tr>
