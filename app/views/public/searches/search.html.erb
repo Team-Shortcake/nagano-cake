@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col md-12">
+      <h3>商品一覧</h3>(全<%= @item.count %>件)
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <% @item.each do |item| %>
+      <div class="col-md-3">
+        <div class="card mb-3">
+          <%= link_to item_path(item.id) do %>
+            <%= attachment_image_tag item,:image, size:"255x210", fallback: "no_image.jpg" %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= item.name %>
+            </h5>
+            <p class="card-text">
+              <% tax_in = item.price * 1.1 %>
+                ¥ <%= tax_in.round %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -15,26 +15,102 @@
  */
 @import "bootstrap";
 
+@charset "utf-8";
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  color: #6c6b6b;
 }
 
-.background_top {
-  width:790px;
-  height:250px;
-  margin-top: 20px;
-  background-image: url(shop.jpg);
-  background-size: cover;
-  background-position: center;
-  padding: 50px 200px;
+/* サイト全体のフォント指定 */
+
+body{
+    background:#ecf1e9;
+    font-family: "Hannotate SC", sans-serif;
+	color: #333;
+	font-size:1rem;
+	line-height:1.85;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	word-wrap: break-word;
 }
 
-.top-img{
-  height: 770px;
-	width :100%;
-  object-fit: cover;
+
+ul,
+ol{
+	margin:0;
+	padding: 0;
+	list-style: none;
 }
+
+a{
+	color: #333;
+	text-decoration: none;
+    outline: none;
+}
+
+img{
+    max-width:100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+*{
+    box-sizing: border-box
+}
+
+footer {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  line-height: 120px;
+  margin-top: 100px;
+}
+
+
+// top.html見た目テスト
+
+#wrapper{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+    padding: 0 70px;
+
+    padding-top: 50px;
+
+}
+
+#main-area{
+	width:70%;
+}
+
+// #sub-area{
+// // 	width:24%;
+//     position: relative;
+//     z-index: 1;
+// }
+
+@media screen and (max-width:1020px){
+#wrapper{
+    padding: 50px, 0, 0, 0;
+
+}
+#main-area,
+#sub-area{
+	width:100%;
+    padding: 0 30px;
+}
+
+#sub-area{
+    margin:0 0 80px 0;
+}
+
+}
+
+
 
 .space-left {
   margin-left: 80px;
@@ -63,3 +139,328 @@
   transform: translateX(-50%);
 }
 
+// スライドショー----------------
+#box-slideshow{
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}
+.image1 {
+  background-image: url(image1.jpg);
+}
+.image2 {
+  background-image: url(image2.jpg);
+}
+.image3 {
+background-image: url(image3.jpg);
+ }
+ // --------------------
+ .main-box {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ .flex-container {
+ 	display: flex;
+ 	flex-direction: row;
+ 	padding-top: 15px;
+ 	padding-bottom: 15px;
+ }
+
+
+// .main_visual {
+//   width: 100%;
+//   height: 300px;
+
+// }
+ .top_image {
+   width: 100%;
+   height: 550px;
+   background-image: url(apple-top.jpg);
+   background-position: center;
+
+ }
+
+ .sample {
+   width: 500px;
+}
+
+.sample img {
+   object-fit: cover;
+   width: 500px;
+   height: 100px;
+}
+
+
+
+
+// スライダーcss
+
+.slider{
+    position: relative;
+    z-index: 1;
+}
+
+.slider img {
+    width:50vw;/*スライダー内の画像を50vwにしてレスポンシブ化*/
+    height:500px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.slider .slick-slide {
+	transform: scale(0.85);/*左右の画像のサイズを85%に*/
+	transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+}
+
+// 両サイド画像ぼかし
+// .slider .slick-slide:not(.slick-center) {
+//   -webkit-filter: blur(5px);
+//   -moz-filter:blur(5px);
+//   -o-filter: blur(5px);
+//   -ms-filter: blur(5px);
+//   filter: blur(5px);
+//   transition: 0.2s linear;
+// }
+
+
+
+@media screen and (max-width:2560px){
+  .slider img {
+    width:28vw;
+  }
+}
+
+
+@media screen and (max-width:1020px){
+ .slider img {
+    width:70vw;/*スライダー内の画像を55vwにしてレスポンシブ化*/
+}
+}
+
+@media screen and (max-width:768px){
+ .slider img {
+    width:96vw;/*スライダー内の画像を55vwにしてレスポンシブ化*/
+}
+
+}
+
+.slider .slick-slide.slick-center{
+	transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+	opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+    text-align:center;
+	margin:20px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+	margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#457703;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#B25938;/*ドットボタンの現在地表示の色*/
+}
+
+
+
+span.detail-price {
+  position: absolute;
+  right:10px;
+  bottom:10px;
+  background:#fff;
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+
+// topの一番上の画像
+#slider-area{
+    position: relative;
+    height: 800px;
+}
+
+// #slider-area .scrolldown1{
+//     top: inherit;
+//     bottom:0;
+//     z-index: 1;
+// }
+
+.top-slider {
+    position: relative;
+	z-index: 1;
+	/*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
+// 	height: 90vh;/*スライダー全体の縦幅を90vhにする*/
+}
+
+// .slider{
+//     position: relative;
+//     z-index: 1;
+// }
+
+.top-slider img {
+    // width:50vw;/*スライダー内の画像を50vwにしてレスポンシブ化*/
+    height:700px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+
+
+/*　背景画像設定　*/
+
+.background_top1 {
+ background: url(top1.png);
+  height:900px;
+  border-radius: 10px;
+  margin: 10px;
+  background-size: cover;
+  background-position: center;
+  padding: 50px 200px;
+}
+.background_top2 {
+  background: url(top2.png);
+  height:900px;
+  margin: 10px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  padding: 50px 200px;
+}
+.background_top3 {
+  background: url(top3.png);
+  height:900px;
+  margin: 10px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  padding: 50px 200px;
+}
+.background_top4 {
+  background: url(top4.png);
+  height:900px;
+  margin: 10px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  padding: 50px 200px;
+}
+
+.top-item {
+    width: 100%;/*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+    height:90vh;/*各スライダー全体の縦幅を90vhにする*/
+    background-repeat: no-repeat;/*背景画像をリピートしない*/
+    background-position: center;/*背景画像の位置を中央に*/
+    background-size: cover;/*背景画像が.top-item全体を覆い表示*/
+
+
+  // width:100%;
+  // height:900px;
+  // margin-top: 20px;
+  // background-size: cover;
+  // background-position: center;
+  // padding: 50px 200px;
+
+}
+
+  // width:100%;
+  // height:900px;
+  // margin-top: 20px;
+  // background-size: cover;
+  // background-position: center;
+  // padding: 50px 200px;
+
+
+// -------------------------
+.notice {
+  color: white;
+  background-color: pink;
+  text-align: center;
+}
+.alert {
+  // color: white;
+  // background-color: red;
+  text-align: center;
+}
+
+
+
+// アイテムindex,showレイアウト
+.item-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 100%;
+}
+
+// .flex-item {
+//   padding: 20px;
+//   width: 50%;
+// }
+
+.image-wrap {
+  margin: 10px 30px 10px 10px;
+}
+
+.image-wrap img {
+    height: 300px;
+    width: 400px;
+}
+
+
+
+// @media screen and (max-width:1020px){
+// .wrapper li ul.item-container .image-wrap img {
+//   display: block;
+//   width: 100%;
+// }
+// }
+
+// @media screen and (max-width:768px){
+// .wrapper li ul .item-container .image-wrap img {
+//   display: block;
+//   width: 100%;
+// }
+// }

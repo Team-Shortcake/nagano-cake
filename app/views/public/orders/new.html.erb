@@ -1,2 +1,46 @@
-<h1>Public::Orders#new</h1>
-<p>Find me in app/views/public/orders/new.html.erb</p>
+<div class="container">
+  <div class="col-md-6 mx-auto">
+    <h2><i class="fas fa-pen"></i>注文情報入力</h2>
+    <p><%= notice %></p>
+    
+    <%= form_with model:@order, local: true, url: orders_confirm_path, method: :post do |f| %>
+    <div class="field row" style="mergin-left: 20px;">
+      <div class="payment-form">
+        <h4><strong>支払い方法</strong></h4>
+        <!-- ラジオボタンの記述 -->
+        <label style="margin-left: 60px;"><%= f.radio_button :payment, 0, checked: "checked" %> クレジットカード </label>
+        <label style="margin-left: 60px;"><%= f.radio_button :payment, 1 %> 銀行振込</label><br>
+      </div>
+      <div class="address-form" style="margin-top: 25px;">
+        <h4><strong>お届け先</strong></h4>
+        <!-- my住所  -->
+        <label style="margin-left: 60px;"><%= f.radio_button :address_number, 1,checked: "checked" %> ご自身の住所</label>
+        <div style="margin-left: 70px">
+          <%= current_customer.postal_code %> <%= current_customer.address %>
+          <%= current_customer.first_name_kanji %><%= current_customer.last_name_kanji %>
+        </div>
+      </div>
+      <div class="address-form" style="margin-top: 25px; padding:0 60px;">
+        <!-- 登録済住所 -->
+        <label style=""><%= f.radio_button :address_number ,2 %> 登録済住所からの選択</label><br>
+        <div style=" "><%= f.collection_select :addresses, @current_customer.delivery_addresses.all, :id, :address_all %></div>
+      </div>
+      <div class="address-form" style="margin-top: 25px;">
+        <!-- 新規届け先 -->
+        <label style="margin-left: 60px;"><%= f.radio_button :address_number, 3 %> 新しいお届け先</label><br>
+          <div style="display: flex; margin-left: 15%;">
+            <div style="display:block;">
+              <div><%= f.label :"郵便番号(ハイフンなし)"%></div>
+                <%= f.text_field :postal_code %><br>
+              <div><%= f.label :"住所" %></div>
+                  <%= f.text_field :address ,size: "60" %><br>
+              <div><%= f.label :"宛名" %></div>
+                  <%= f.text_field :name %><br>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-6 mx-auto" style="margin: 18px; "><%= f.submit "確認画面に進む", class:"btn btn-outline-primary" %></div>
+    <% end %>
+    </div>
+  </div>
+</div>
