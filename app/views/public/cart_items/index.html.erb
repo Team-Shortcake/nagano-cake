@@ -4,7 +4,7 @@
       <h2><i class="fas fa-shopping-cart"></i>ショッピングカート</h2>
         <div style="text-align: right;">
           <div>
-            <%= link_to "カートを空にする", cart_item_destroy_all_path(@cart_items), method: :delete, class:"btn-danger" %>
+            <%= link_to "カートを空にする", cart_item_destroy_all_path(@cart_items), method: :delete, class:"btn btn-outline-danger" %>
           </div>
         </div>
         <h4><%= notice %></h4>
@@ -32,7 +32,7 @@
                 </td>
                 <td>
                   <%= form_with model:cart_item, local:true do |f| %>
-                  <%= f.number_field :quantity, min:1, max: 20 %>  <%= f.submit "変更" ,class:"btn btn-primary btn-sm" %>
+                  <%= f.number_field :quantity, min:1, max: 20 %>  <%= f.submit "変更" ,class:"btn btn-outline-primary" %>
                   <% end %>
                 </td>
                 <td>
@@ -42,7 +42,7 @@
                 </td>
                 <td>
                   <div style="margin-left: 50px;">
-                    <%= link_to "削除する", cart_item_path(cart_item), method: :delete, class:"btn btn-danger btn-sm" %>
+                    <%= link_to "削除する", cart_item_path(cart_item), method: :delete, class:"btn btn-outline-danger" %>
                   </div>
                 </td>
               </tr>
@@ -52,7 +52,7 @@
     </div> <!--col-md-12閉じタグ-->
     <div class="col-md-5">
       <div style="margin-top:50px;">
-        <%= link_to "買い物を続ける", root_path, class:"btn btn-primary" %>
+        <%= link_to "買い物を続ける", root_path, class:"btn btn-outline-primary" %>
       </div>
     </div>
     
@@ -64,6 +64,6 @@
     </div>
   </div><!--row閉じタグ-->
   <div class="col-md-12 cart_continue_to_order" style="text-align: center;">
-    <%= link_to "情報入力に進む", orders_confirm_path, class: "btn btn-success btn-lg" %>
+    <%= link_to "情報入力に進む", orders_confirm_path, class:"btn btn-outline-success" %>
   </div>
 </div>

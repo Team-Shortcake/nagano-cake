@@ -12,9 +12,12 @@ class Item < ApplicationRecord
   validates :price, presence: true
   validates :is_order_status, inclusion: [true, false]
 
-   def add_tax_price
-     (self.price*1.10).round
-   end
-
+  def add_tax_price
+    (self.price*1.10).round
+  end
+   
+  def self.search(keyword)
+    where(["name like?", "%#{keyword}%"])
+  end
 
 end

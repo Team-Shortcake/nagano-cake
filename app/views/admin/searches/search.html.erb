@@ -21,10 +21,10 @@
             <td><%= item.price %></td>
             <td><%= item.genre.name %></td>
             <td>
-            <% if product.status == true %>
-              <p class="text-success">販売中</p>
+            <% if @is_order_status == true %>
+              <p style="color: green;">販売中</p>
             <% else %>
-              <p class="text-secondary">販売停止中</p>
+              <p style="color: #CCCCCC">販売停止中</p>
             <% end %>
             </td>
           </tr>
