@@ -80,7 +80,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def request_post?
-    redirect_to new_order_path, notice: "もう一度最初から入力してください。" unless request.post?
+    redirect_to new_order_path, notice: "入力してください。" unless request.post?
   end
 
   def order_params
