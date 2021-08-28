@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-md-6 mx-auto">
     <h2><i class="fas fa-pen"></i>注文情報入力</h2>
-    <p><%= notice %></p>
+    <!--<p><%#= notice %></p>-->
     
     <%= form_with model:@order, local: true, url: orders_confirm_path, method: :post do |f| %>
     <div class="field row" style="mergin-left: 20px;">
