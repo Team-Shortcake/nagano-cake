@@ -48,7 +48,7 @@ InstagramのDMやメールで通販の注文を受けていたが、情報管理
 ## インストール
 $ git clone git@github.com:team-shortcake/nagano-cake.git(SSH)<br>
 or <br>
-$ git clone https://github.com/team-shortcake/nagano-cake.git(HTTPS) <br>
+$ git clone https://github.com/team-shortcake/nagano-cake.git (HTTPS) <br>
 $ cd nagano-cake<br>
 $ bundle install<br>
 $ rails db:migrate<br>
@@ -64,7 +64,7 @@ $ rails db:seed<br>
 ・Ruby<br>
 ・JavaScript<br>
 ・フレームワーク<br>
- ⚪︎Ruby on Rails (5.2.6)
+ ︎ Ruby on Rails (5.2.6)
 
 # Gem
 
